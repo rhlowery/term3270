@@ -18,10 +18,14 @@ import static org.mockito.Mockito.verify;
  * Step definitions for Keyboard behavior.
  */
 public class KeyboardSteps {
-
+  private final TestContext context;
   private ITerminalSession mockSession;
   private TerminalPanel panel;
   private KeyEvent lastEvent;
+
+  public KeyboardSteps(TestContext context) {
+    this.context = context;
+  }
 
   /**
    * Initializes a focused terminal window with a mock session.
@@ -29,6 +33,7 @@ public class KeyboardSteps {
   @Given("a focused terminal window")
   public void aFocusedTerminalWindow() {
     mockSession = mock(ITerminalSession.class);
+    context.setSession(mockSession);
     
     // Setup Mock Lookup
     InstanceContent content = new InstanceContent();
@@ -59,6 +64,8 @@ public class KeyboardSteps {
       case "F1" -> KeyEvent.VK_F1;
       case "F12" -> KeyEvent.VK_F12;
       case "ESCAPE" -> KeyEvent.VK_ESCAPE;
+      case "PAGE_UP" -> KeyEvent.VK_PAGE_UP;
+      case "PAGE_DOWN" -> KeyEvent.VK_PAGE_DOWN;
       default -> throw new IllegalArgumentException("Unknown key: " + keyName);
     };
 

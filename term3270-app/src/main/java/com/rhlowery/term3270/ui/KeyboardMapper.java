@@ -32,6 +32,8 @@ public class KeyboardMapper implements IKeyboardLayout {
     AID_MAP.put(KeyEvent.VK_F10, AIDKey.PF10);
     AID_MAP.put(KeyEvent.VK_F11, AIDKey.PF11);
     AID_MAP.put(KeyEvent.VK_F12, AIDKey.PF12);
+    AID_MAP.put(KeyEvent.VK_PAGE_UP, AIDKey.PF7);
+    AID_MAP.put(KeyEvent.VK_PAGE_DOWN, AIDKey.PF8);
   }
 
   @Override

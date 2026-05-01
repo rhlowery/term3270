@@ -113,4 +113,13 @@ public class TestContext {
     }
     return session;
   }
+
+  /**
+   * Sets the terminal session.
+   *
+   * @param session The session to set.
+   */
+  public void setSession(ITerminalSession session) {
+    this.session = session;
+  }
 }

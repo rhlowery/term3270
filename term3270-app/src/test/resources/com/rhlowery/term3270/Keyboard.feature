@@ -14,3 +14,5 @@ Feature: Keyboard Input
       | F1           | PF1        |
       | F12          | PF12       |
       | ESCAPE       | CLEAR      |
+      | PAGE_UP      | PF7        |
+      | PAGE_DOWN    | PF8        |
