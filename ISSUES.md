@@ -59,7 +59,8 @@
 | 56 | Implement Pluggable Printing Engines        | Open   | issue-56-print  |
 | 57 | Implement Pluggable Keyboard Layouts        | Open   | issue-57-kbd    |
 | 58 | Implement Pluggable Macro Storage           | Open   | issue-58-macro  |
-| 58 | Implement Pluggable Macro Storage           | Open   | issue-58-macro  |
+| 58 | Implement Pluggable Macro Storage           | Closed | issue-58-macro  |
+| 59 | Implement Connect Button Click in Tests     | Open   | issue-59-test-connect |
 
 ## Issue 25: Implement Outbound IAC Escaping and EOR Framing
 The current implementation of `sendData` sends raw bytes to the host. Any `0xFF` bytes in the 3270 data stream (common in buffer addresses) are not escaped as `0xFF 0xFF`, causing Telnet protocol errors. Additionally, outbound messages lack the mandatory `IAC EOR` (FF EF) termination, preventing the host from processing user input.
@@ -252,5 +253,7 @@ The current `PrintService` is hardcoded to PDF export via OpenPDF. This feature 
 Move the `KeyboardMapper` logic into a pluggable system. This will enable users to create, share, and load custom keyboard maps for specific mainframe applications or different physical keyboard layouts (e.g., non-US layouts) via external configuration or modules.
 
 ## Issue 58: Implement Pluggable Macro Storage
-**Status:** Closed
 Enable pluggable macro storage backends. Currently, macros are stored as JSON files on the local disk. This feature will allow for alternative storage providers (e.g., SQLite databases, cloud storage, or encrypted containers) to be plugged in dynamically, by defining a macro persistence SPI.
+
+## Issue 59: Implement Connect Button Click in Tests
+The current BDD tests for the Connection UI use the step `And I click "Connect"`, but the corresponding step definition in `ConnectionUISteps.java` is empty. This prevents the tests from correctly simulating the user's confirmation in the `ConnectionDialog`, which is required to initiate the terminal session. Implementing this step will ensure that the integration tests accurately reflect the application's connection flow.
