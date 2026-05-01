@@ -19,10 +19,17 @@ jobs:
           java-version: "17"
           distribution: "temurin"
           cache: maven
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Start Hercules TK5
         run: |
           # Start TK5 in detached mode
-          docker run -d --privileged --name tk5-emulator -p 3270:3270 -p 8038:8038 rhlowery/tk5-hercules:latest
+          docker run -d --privileged --name tk5-emulator -p 3270:3270 -p 8038:8038 ghcr.io/rhlowery/tk5-hercules:latest
           echo "Waiting for Hercules TK5 to start..."
           timeout 120s bash -c "until curl -s http://localhost:8038 > /dev/null; do sleep 5; done"
           echo "TK5 is running"
