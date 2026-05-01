@@ -16,3 +16,20 @@ jobs:
       - name: Generate Allure Report
         run: ./mvnw allure:report
         if: always()
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      # Add virtual display before running tests
+      - name: Start virtual display
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y xvfb
+          export DISPLAY=:99
+          sudo Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
+      
+      - name: Run tests
+        run: mvn test
+        env:
+          DISPLAY: :99
