@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="term3270">
+  <body>
+    <menu name="Modules">
+      <item name="Utilities" href="term3270-utilities/index.html"/>
+      <item name="Application" href="term3270-app/index.html"/>
+      <item name="Plugins" href="term3270-plugins/index.html"/>
+    </menu>
+
+    <menu name="Reports">
+      <item name="Allure BDD Report" href="term3270-app/allure-report/index.html"/>
+    </menu>
+
+    <menu ref="reports"/>
+    <menu ref="modules"/>
+  </body>
+</project>

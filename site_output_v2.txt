@@ -1,0 +1,1292 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] term3270 Parent                                                      [pom]
+[INFO] term3270 Utilities                                                   [jar]
+[INFO] term3270 Application                                                 [jar]
+[INFO] term3270 Plugins                                                     [jar]
+[INFO] 
+[INFO] -----------------< com.rhlowery.term3270:term3270-parent >------------------
+[INFO] Building term3270 Parent 1.0.0-SNAPSHOT                              [1/4]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ term3270-parent ---
+[INFO] Deleting /Users/loweryr/git/github/rhlowery/term3270/target
+[INFO] 
+[INFO] --- site:3.12.1:site (default-site) @ term3270-parent ---
+[INFO] configuring report plugin org.apache.maven.plugins:maven-project-info-reports-plugin:3.5.0
+[INFO] 16 reports detected for maven-project-info-reports-plugin:3.5.0: ci-management, dependencies, dependency-convergence, dependency-info, dependency-management, distribution-management, index, issue-management, licenses, mailing-lists, modules, plugin-management, plugins, scm, summary, team
+[INFO] configuring report plugin org.apache.maven.plugins:maven-javadoc-plugin:3.6.3
+[INFO] preparing maven-javadoc-plugin:aggregate report requires 'compile' forked phase execution
+[INFO] 
+[INFO] >>> javadoc:3.6.3:aggregate > compile @ term3270-parent >>>
+[INFO] 
+[INFO] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[INFO] Forking term3270 Parent 1.0.0-SNAPSHOT
+[INFO] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[INFO] 
+[INFO] --- jacoco:0.8.12:prepare-agent (default) @ term3270-parent ---
+[INFO] argLine set to -javaagent:/Users/loweryr/.m2/repository/org/jacoco/org.jacoco.agent/0.8.12/org.jacoco.agent-0.8.12-runtime.jar=destfile=/Users/loweryr/git/github/rhlowery/term3270/target/jacoco.exec
+[INFO] 
+[INFO] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[INFO] Forking term3270 Utilities 1.0.0-SNAPSHOT
+[INFO] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[INFO] 
+[INFO] --- jacoco:0.8.12:prepare-agent (default) @ utilities ---
+[INFO] argLine set to -javaagent:/Users/loweryr/.m2/repository/org/jacoco/org.jacoco.agent/0.8.12/org.jacoco.agent-0.8.12-runtime.jar=destfile=/Users/loweryr/git/github/rhlowery/term3270/utilities/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ utilities ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ utilities ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[INFO] Forking term3270 Application 1.0.0-SNAPSHOT
+[INFO] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[INFO] 
+[INFO] --- jacoco:0.8.12:prepare-agent (default) @ term3270-app ---
+[INFO] argLine set to -javaagent:/Users/loweryr/.m2/repository/org/jacoco/org.jacoco.agent/0.8.12/org.jacoco.agent-0.8.12-runtime.jar=destfile=/Users/loweryr/git/github/rhlowery/term3270/term3270-app/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ term3270-app ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ term3270-app ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[INFO] Forking term3270 Plugins 1.0.0-SNAPSHOT
+[INFO] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[INFO] 
+[INFO] --- jacoco:0.8.12:prepare-agent (default) @ plugins ---
+[INFO] argLine set to -javaagent:/Users/loweryr/.m2/repository/org/jacoco/org.jacoco.agent/0.8.12/org.jacoco.agent-0.8.12-runtime.jar=destfile=/Users/loweryr/git/github/rhlowery/term3270/plugins/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ plugins ---
+[INFO] skip non existing resourceDirectory /Users/loweryr/git/github/rhlowery/term3270/plugins/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ plugins ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] <<< javadoc:3.6.3:aggregate < compile @ term3270-parent <<<
+[INFO] 
+[INFO] 'compile' forked phase execution for maven-javadoc-plugin:aggregate report preparation done
+[INFO] preparing maven-javadoc-plugin:javadoc report requires 'generate-sources' forked phase execution
+[INFO] 
+[INFO] >>> javadoc:3.6.3:javadoc > generate-sources @ term3270-parent >>>
+[INFO] 
+[INFO] --- jacoco:0.8.12:prepare-agent (default) @ term3270-parent ---
+[INFO] argLine set to -javaagent:/Users/loweryr/.m2/repository/org/jacoco/org.jacoco.agent/0.8.12/org.jacoco.agent-0.8.12-runtime.jar=destfile=/Users/loweryr/git/github/rhlowery/term3270/target/jacoco.exec
+[INFO] 
+[INFO] <<< javadoc:3.6.3:javadoc < generate-sources @ term3270-parent <<<
+[INFO] 
+[INFO] 'generate-sources' forked phase execution for maven-javadoc-plugin:javadoc report preparation done
+[INFO] preparing maven-javadoc-plugin:test-aggregate report requires 'test-compile' forked phase execution
+[INFO] 
+[INFO] >>> javadoc:3.6.3:test-aggregate > test-compile @ term3270-parent >>>
+[INFO] 
+[INFO] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[INFO] Forking term3270 Parent 1.0.0-SNAPSHOT
+[INFO] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[INFO] 
+[INFO] --- jacoco:0.8.12:prepare-agent (default) @ term3270-parent ---
+[INFO] argLine set to -javaagent:/Users/loweryr/.m2/repository/org/jacoco/org.jacoco.agent/0.8.12/org.jacoco.agent-0.8.12-runtime.jar=destfile=/Users/loweryr/git/github/rhlowery/term3270/target/jacoco.exec
+[INFO] 
+[INFO] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[INFO] Forking term3270 Utilities 1.0.0-SNAPSHOT
+[INFO] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[INFO] 
+[INFO] --- jacoco:0.8.12:prepare-agent (default) @ utilities ---
+[INFO] argLine set to -javaagent:/Users/loweryr/.m2/repository/org/jacoco/org.jacoco.agent/0.8.12/org.jacoco.agent-0.8.12-runtime.jar=destfile=/Users/loweryr/git/github/rhlowery/term3270/utilities/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ utilities ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ utilities ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ utilities ---
+[INFO] skip non existing resourceDirectory /Users/loweryr/git/github/rhlowery/term3270/utilities/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ utilities ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[INFO] Forking term3270 Application 1.0.0-SNAPSHOT
+[INFO] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[INFO] 
+[INFO] --- jacoco:0.8.12:prepare-agent (default) @ term3270-app ---
+[INFO] argLine set to -javaagent:/Users/loweryr/.m2/repository/org/jacoco/org.jacoco.agent/0.8.12/org.jacoco.agent-0.8.12-runtime.jar=destfile=/Users/loweryr/git/github/rhlowery/term3270/term3270-app/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ term3270-app ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ term3270-app ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ term3270-app ---
+[INFO] Copying 25 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ term3270-app ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[INFO] Forking term3270 Plugins 1.0.0-SNAPSHOT
+[INFO] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[INFO] 
+[INFO] --- jacoco:0.8.12:prepare-agent (default) @ plugins ---
+[INFO] argLine set to -javaagent:/Users/loweryr/.m2/repository/org/jacoco/org.jacoco.agent/0.8.12/org.jacoco.agent-0.8.12-runtime.jar=destfile=/Users/loweryr/git/github/rhlowery/term3270/plugins/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ plugins ---
+[INFO] skip non existing resourceDirectory /Users/loweryr/git/github/rhlowery/term3270/plugins/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ plugins ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ plugins ---
+[INFO] skip non existing resourceDirectory /Users/loweryr/git/github/rhlowery/term3270/plugins/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ plugins ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] <<< javadoc:3.6.3:test-aggregate < test-compile @ term3270-parent <<<
+[INFO] 
+[INFO] 'test-compile' forked phase execution for maven-javadoc-plugin:test-aggregate report preparation done
+[INFO] preparing maven-javadoc-plugin:test-javadoc report requires 'generate-test-sources' forked phase execution
+[INFO] 
+[INFO] >>> javadoc:3.6.3:test-javadoc > generate-test-sources @ term3270-parent >>>
+[INFO] 
+[INFO] --- jacoco:0.8.12:prepare-agent (default) @ term3270-parent ---
+[INFO] argLine set to -javaagent:/Users/loweryr/.m2/repository/org/jacoco/org.jacoco.agent/0.8.12/org.jacoco.agent-0.8.12-runtime.jar=destfile=/Users/loweryr/git/github/rhlowery/term3270/target/jacoco.exec
+[INFO] 
+[INFO] <<< javadoc:3.6.3:test-javadoc < generate-test-sources @ term3270-parent <<<
+[INFO] 
+[INFO] 'generate-test-sources' forked phase execution for maven-javadoc-plugin:test-javadoc report preparation done
+[INFO] 8 reports detected for maven-javadoc-plugin:3.6.3: aggregate, aggregate-no-fork, javadoc, javadoc-no-fork, test-aggregate, test-aggregate-no-fork, test-javadoc, test-javadoc-no-fork
+[INFO] configuring report plugin org.apache.maven.plugins:maven-surefire-report-plugin:3.2.2
+[INFO] preparing maven-surefire-report-plugin:report report requires '[surefire]test' forked phase execution
+[INFO] 
+[INFO] >>> surefire-report:3.2.2:report > [surefire]test @ term3270-parent >>>
+[INFO] 
+[INFO] --- jacoco:0.8.12:prepare-agent (default) @ term3270-parent ---
+[INFO] argLine set to -javaagent:/Users/loweryr/.m2/repository/org/jacoco/org.jacoco.agent/0.8.12/org.jacoco.agent-0.8.12-runtime.jar=destfile=/Users/loweryr/git/github/rhlowery/term3270/target/jacoco.exec
+[INFO] 
+[INFO] --- jacoco:0.8.12:report (report) @ term3270-parent ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] 
+[INFO] <<< surefire-report:3.2.2:report < [surefire]test @ term3270-parent <<<
+[INFO] 
+[INFO] '[surefire]test' forked phase execution for maven-surefire-report-plugin:report report preparation done
+[INFO] 3 reports detected for maven-surefire-report-plugin:3.2.2: failsafe-report-only, report, report-only
+[INFO] configuring report plugin org.jacoco:jacoco-maven-plugin:0.8.12
+[INFO] 1 report configured for jacoco-maven-plugin:0.8.12: report
+[INFO] configuring report plugin org.apache.maven.plugins:maven-checkstyle-plugin:3.3.1
+[INFO] 1 report configured for maven-checkstyle-plugin:3.3.1: checkstyle
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] Rendering site with default locale English (en)
+[INFO] Relativizing decoration links with respect to localized project URL: https://github.com/rhlowery/term3270
+[INFO] Rendering content with org.apache.maven.skins:maven-default-skin:jar:1.3 skin.
+[INFO] Skipped "Javadoc" report (maven-javadoc-plugin:3.6.3:aggregate-no-fork), file "apidocs/index.html" already exists.
+[INFO] Skipped "Test Javadoc" report (maven-javadoc-plugin:3.6.3:test-aggregate-no-fork), file "testapidocs/index.html" already exists.
+[INFO] Skipped "Surefire" report (maven-surefire-report-plugin:3.2.2:report-only), file "surefire-report.html" already exists.
+[INFO] Generating "Dependency Convergence" report --- maven-project-info-reports-plugin:3.5.0:dependency-convergence
+[INFO] Generating "Dependency Information" report --- maven-project-info-reports-plugin:3.5.0:dependency-info
+[INFO] Generating "Dependency Management" report --- maven-project-info-reports-plugin:3.5.0:dependency-management
+[INFO] Generating "Distribution Management" report --- maven-project-info-reports-plugin:3.5.0:distribution-management
+[INFO] Generating "About" report         --- maven-project-info-reports-plugin:3.5.0:index
+[INFO] Generating "Project Modules" report --- maven-project-info-reports-plugin:3.5.0:modules
+[INFO] Generating "Plugin Management" report --- maven-project-info-reports-plugin:3.5.0:plugin-management
+[INFO] Generating "Plugins" report       --- maven-project-info-reports-plugin:3.5.0:plugins
+[INFO] Generating "Summary" report       --- maven-project-info-reports-plugin:3.5.0:summary
+[INFO] Generating "Javadoc" report       --- maven-javadoc-plugin:3.6.3:aggregate
+[INFO] No previous run data found, generating javadoc.
+[WARNING] Javadoc Warnings
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/utilities/src/main/java/com/rhlowery/term3270/package-info.java:105: warning: a package-info.java file has already been seen for package com.rhlowery.term3270
+[WARNING] package com.rhlowery.term3270;
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/utilities/src/main/java/com/rhlowery/term3270/ScreenBuffer.java:55: warning: no comment
+[WARNING] public void setConverter(EbcdicConverter converter) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/ConnectionDialog.java:30: warning: no comment
+[WARNING] private JComboBox<String> codepageCombo;
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/ConnectionDialog.java:35: warning: no comment
+[WARNING] private boolean confirmed = false;
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/ConnectionDialog.java:31: warning: no comment
+[WARNING] private JComboBox<String> emulationCombo;
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/ConnectionDialog.java:27: warning: no comment
+[WARNING] private JTextField hostField;
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/ConnectionDialog.java:28: warning: no comment
+[WARNING] private JTextField portField;
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/ConnectionDialog.java:33: warning: no comment
+[WARNING] private JCheckBox secureCheckBox;
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/ConnectionDialog.java:32: warning: no comment
+[WARNING] private JComboBox<String> sizeCombo;
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/ConnectionDialog.java:29: warning: no comment
+[WARNING] private JTextField typeField;
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/ConnectionDialog.java:34: warning: no comment
+[WARNING] private JCheckBox verifyHostnameCheckBox;
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/FileTransferDialog.java:27: warning: no comment
+[WARNING] private boolean approved = false;
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/FileTransferDialog.java:25: warning: no comment
+[WARNING] private final JTextField commandField = new JTextField("IND$FILE GET MY.DATA");
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/FileTransferDialog.java:24: warning: no comment
+[WARNING] private final JComboBox<String> modeBox = new JComboBox<>(new String[]{"Download (GET)", "Upload (PUT)"});
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/FileTransferDialog.java:26: warning: no comment
+[WARNING] private final JTextField pathField = new JTextField();
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/TerminalFrame.java:37: warning: no comment
+[WARNING] private String lastCodepage = EbcdicConverter.DEFAULT_CODEPAGE;
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/TerminalFrame.java:38: warning: no comment
+[WARNING] private String lastEmulationType = "3270";
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/TerminalFrame.java:32: warning: no comment
+[WARNING] private String lastHost;
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/TerminalFrame.java:33: warning: no comment
+[WARNING] private int lastPort;
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/TerminalFrame.java:35: warning: no comment
+[WARNING] private boolean lastSecure;
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/TerminalFrame.java:34: warning: no comment
+[WARNING] private String lastType;
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/TerminalFrame.java:36: warning: no comment
+[WARNING] private boolean lastVerifyHostname;
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/TerminalPanel.java:113: warning: no comment
+[WARNING] private int blinkCounter = 0;
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/TerminalPanel.java:35: warning: no comment
+[WARNING] private int charDescent;
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/TerminalPanel.java:34: warning: no comment
+[WARNING] private int charHeight;
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/TerminalPanel.java:33: warning: no comment
+[WARNING] private int charWidth;
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/TerminalPanel.java:32: warning: no comment
+[WARNING] private int cols = 80;
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/TerminalPanel.java:31: warning: no comment
+[WARNING] private int rows = 24;
+[WARNING] ^
+[WARNING] 28 warnings
+[INFO] Generating "Test Javadoc" report  --- maven-javadoc-plugin:3.6.3:test-aggregate
+[INFO] Configuration changed, re-generating javadoc.
+[WARNING] Javadoc Warnings
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/AidResponseSteps.java:18: warning: no comment
+[WARNING] public AidResponseSteps(TestContext context) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/AidResponseSteps.java:76: warning: no comment
+[WARNING] public void iParseAWccWithResetMdtBitSet() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/AidResponseSteps.java:64: warning: no comment
+[WARNING] public void theFieldAtRowColumnShouldBeModified(Integer row, Integer col) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/AidResponseSteps.java:70: warning: no comment
+[WARNING] public void theFieldAtRowColumnShouldNotBeModified(Integer row, Integer col) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/AidResponseSteps.java:23: warning: no comment
+[WARNING] public void theOutboundDataShouldContainAid(String aidName) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/AidResponseSteps.java:31: warning: no comment
+[WARNING] public void theOutboundDataShouldContainCursorAddressAtRowColumn(Integer row, Integer col) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/AidResponseSteps.java:41: warning: no comment
+[WARNING] public void theOutboundDataShouldContainForFieldAtRowColumn(String expectedText, Integer row, Integer col) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/AttributeSteps.java:17: warning: no comment
+[WARNING] public AttributeSteps(TestContext context) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/AttributeSteps.java:29: warning: no comment
+[WARNING] public void aCellWithAttributeAtRowColumn(String attrName, Integer row, Integer col) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/AttributeSteps.java:22: warning: no comment
+[WARNING] public void aProtectedFieldAtRowColumn(Integer row, Integer col) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/AttributeSteps.java:78: warning: no comment
+[WARNING] public void theCellAtRowColumnShouldBe(Integer row, Integer col, String expectedColor) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/AttributeSteps.java:38: warning: no comment
+[WARNING] public void theCellAtRowColumnShouldBeIntensified(Integer row, Integer col) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/AttributeSteps.java:43: warning: no comment
+[WARNING] public void theHostParsesAColorForCellAtRowColumn(String colorName, Integer row, Integer col) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/BulkOrderSteps.java:17: warning: no comment
+[WARNING] public BulkOrderSteps(TestContext context) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/BulkOrderSteps.java:33: warning: no comment
+[WARNING] public void anUnprotectedFieldAtRowColumn(Integer row, Integer col) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/BulkOrderSteps.java:40: warning: no comment
+[WARNING] public void iParseAnEuaSequenceForRowColumn(Integer row, Integer col) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/BulkOrderSteps.java:22: warning: no comment
+[WARNING] public void iParseAnRaSequenceForRowColumnWithChar(Integer row, Integer col, String c) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CodepageSteps.java:30: warning: no comment
+[WARNING] public void aDefaultEbcdicConverter() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CodepageSteps.java:24: warning: no comment
+[WARNING] public void anEbcdicConverterUsingCodepage(
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CodepageSteps.java:69: warning: no comment
+[WARNING] public void anExceptionShouldBeThrown() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CodepageSteps.java:45: warning: no comment
+[WARNING] public void iCreateAConverterWithCodepage(
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CodepageSteps.java:40: warning: no comment
+[WARNING] public void iDecodeTheResult() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CodepageSteps.java:35: warning: no comment
+[WARNING] public void iEncodeTheCharacter(String ch) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CodepageSteps.java:63: warning: no comment
+[WARNING] public void theCodepageShouldBe(String expected) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CodepageSteps.java:55: warning: no comment
+[WARNING] public void theDecodedCharacterShouldBe(
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CommonSteps.java:17: warning: no comment
+[WARNING] public CommonSteps(TestContext context) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CommonSteps.java:42: warning: no comment
+[WARNING] public void aBlankTerminalBuffer() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CommonSteps.java:35: warning: no comment
+[WARNING] public void anEmptyScreen() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CommonSteps.java:69: warning: no comment
+[WARNING] public void iParseTheText(String text) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CommonSteps.java:56: warning: no comment
+[WARNING] public void iPressTheKey(String key) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CommonSteps.java:22: warning: no comment
+[WARNING] public void setUp() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CommonSteps.java:50: warning: no comment
+[WARNING] public void theSessionStatusShouldBe(String expectedStatus) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ConnectionSteps.java:25: warning: no comment
+[WARNING] public void aMainframeHostOnPort(String host, Integer requestedPort) throws IOException {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ConnectionSteps.java:39: warning: no comment
+[WARNING] public void aTerminalTypeOf(String termType) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ConnectionSteps.java:44: warning: no comment
+[WARNING] public void iAttemptToConnect() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ConnectionSteps.java:51: warning: no comment
+[WARNING] public void theTerminalScreenShouldBeInitialized() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ConnectionUISteps.java:18: warning: no comment
+[WARNING] public class ConnectionUISteps {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ConnectionUISteps.java:23: warning: no comment
+[WARNING] public ConnectionUISteps(TestContext context) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ConnectionUISteps.java:93: warning: no comment
+[WARNING] public void aMockServerIsAvailable() throws IOException {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ConnectionUISteps.java:28: warning: no comment
+[WARNING] public void aTerminalApplicationIsRunning() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ConnectionUISteps.java:125: warning: no comment
+[WARNING] public void iClick(String buttonText) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ConnectionUISteps.java:105: warning: no comment
+[WARNING] public void iEnterAsHostAndAsPort(String host, Integer port) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ConnectionUISteps.java:140: warning: no comment
+[WARNING] public void iSelectAsEmulationType(String type) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ConnectionUISteps.java:151: warning: no comment
+[WARNING] public void iSelectAsTerminalSize(String size) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ConnectionUISteps.java:35: warning: no comment
+[WARNING] public void iSelectFromTheMenu(String menuName, String itemName) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ConnectionUISteps.java:115: warning: no comment
+[WARNING] public void iToggleSecureConnectionTo(String secure) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ConnectionUISteps.java:120: warning: no comment
+[WARNING] public void iToggleVerifyHostnameTo(String verify) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ConnectionUISteps.java:88: warning: no comment
+[WARNING] public void theConnectionDialogIsOpen() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ConnectionUISteps.java:81: warning: no comment
+[WARNING] public void theConnectionDialogShouldBeVisible() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ConnectionUISteps.java:161: warning: no comment
+[WARNING] public void theSessionShouldBeInitializedWithColumnsAndRows(int cols, int rows) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ConnectionUISteps.java:135: warning: no comment
+[WARNING] public void theSessionShouldDisconnectAndThenReconnect() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ConnectionUISteps.java:145: warning: no comment
+[WARNING] public void theSessionShouldUseEmulation(String expected) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ConnectionUISteps.java:130: warning: no comment
+[WARNING] public void theSessionStatusShouldEventuallyBe(String status) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CursorNavigationSteps.java:8: warning: no comment
+[WARNING] public class CursorNavigationSteps {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CursorNavigationSteps.java:12: warning: no comment
+[WARNING] public CursorNavigationSteps(TestContext context) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CursorNavigationSteps.java:38: warning: no comment
+[WARNING] public void iPressTheBackspaceKey() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CursorNavigationSteps.java:33: warning: no comment
+[WARNING] public void iPressTheDownArrowKey() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CursorNavigationSteps.java:23: warning: no comment
+[WARNING] public void iPressTheLeftArrowKey() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CursorNavigationSteps.java:18: warning: no comment
+[WARNING] public void iPressTheRightArrowKey() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CursorNavigationSteps.java:28: warning: no comment
+[WARNING] public void iPressTheUpArrowKey() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CursorSteps.java:16: warning: no comment
+[WARNING] public CursorSteps(TestContext context) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CursorSteps.java:21: warning: no comment
+[WARNING] public void theCursorIsAtRowColumn(Integer row, Integer col) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CursorSteps.java:28: warning: no comment
+[WARNING] public void theCursorShouldBeAtRowColumn(Integer row, Integer col) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/EbcdicSteps.java:16: warning: no comment
+[WARNING] public void iTranslateEbcdicByte(Integer ebcdicByte) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/EbcdicSteps.java:21: warning: no comment
+[WARNING] public void theAsciiCharacterShouldBe(String expected) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ExitSteps.java:9: warning: no comment
+[WARNING] public class ExitSteps {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ExitSteps.java:13: warning: no comment
+[WARNING] public ExitSteps(TestContext context) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ExitSteps.java:18: warning: no comment
+[WARNING] public void aConnectedSessionForExitTesting() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ExitSteps.java:25: warning: no comment
+[WARNING] public void iTriggerTheAction(String action) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ExitSteps.java:39: warning: no comment
+[WARNING] public void theApplicationShouldTerminate() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ExitSteps.java:34: warning: no comment
+[WARNING] public void theSessionShouldBeDisconnected() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ExtendedAttributeSteps.java:17: warning: no comment
+[WARNING] public ExtendedAttributeSteps(TestContext context) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ExtendedAttributeSteps.java:74: warning: no comment
+[WARNING] public void iParseAnSaSequenceFor(String highlightName) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ExtendedAttributeSteps.java:89: warning: no comment
+[WARNING] public void iParseAnSaSequenceForColor(String colorName) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ExtendedAttributeSteps.java:22: warning: no comment
+[WARNING] public void iParseAnSfeSequenceWithColorAtRowColumn(String colorName, Integer row, Integer col) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ExtendedAttributeSteps.java:51: warning: no comment
+[WARNING] public void iParseAnSfeSequenceWithHighlightAtRowColumn(String hlName, Integer row, Integer col) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ExtendedAttributeSteps.java:108: warning: no comment
+[WARNING] public void theCharacterAtRowColumnShouldHaveColor(Integer row, Integer col, String colorName) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ExtendedAttributeSteps.java:115: warning: no comment
+[WARNING] public void theCharacterAtRowColumnShouldHaveHighlight(Integer row, Integer col, String hlName) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/FieldValidationSteps.java:14: warning: no comment
+[WARNING] public FieldValidationSteps(TestContext context) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/FieldValidationSteps.java:19: warning: no comment
+[WARNING] public void aNumericFieldAtRowColumn(Integer row, Integer col) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/FieldValidationSteps.java:27: warning: no comment
+[WARNING] public void iTypeAtRowColumn(String text, Integer row, Integer col) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/FileTransferSteps.java:14: warning: no comment
+[WARNING] public class FileTransferSteps {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/FileTransferSteps.java:19: warning: no comment
+[WARNING] public FileTransferSteps(TestContext context) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/FileTransferSteps.java:51: warning: no comment
+[WARNING] public void aFileTransferIsActiveFor(String filename) throws Exception {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/FileTransferSteps.java:90: warning: no comment
+[WARNING] public void aLocalFileWithContent(String filename, String content) throws Exception {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/FileTransferSteps.java:95: warning: no comment
+[WARNING] public void iUploadTheFileWithCommand(String filename, String command) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/FileTransferSteps.java:24: warning: no comment
+[WARNING] public void theHostSendsARequest(String type) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/FileTransferSteps.java:76: warning: no comment
+[WARNING] public void theHostSendsAWithAIndicator(String type, String indicator) throws Exception {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/FileTransferSteps.java:56: warning: no comment
+[WARNING] public void theHostSendsAWithData(String type, String data) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/FileTransferSteps.java:81: warning: no comment
+[WARNING] public void theLocalFileShouldContain(String filename, String expected) throws Exception {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/FileTransferSteps.java:46: warning: no comment
+[WARNING] public void theReplyShouldContainTheFileTransferAttribute(String attr) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/FileTransferSteps.java:33: warning: no comment
+[WARNING] public void theTerminalShouldReplyWithAIncludingSupport(String replyType, String support) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/FileTransferSteps.java:100: warning: no comment
+[WARNING] public void theTerminalShouldSendAStructuredFieldWithData(String expected) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/FunctionKeySteps.java:9: warning: no comment
+[WARNING] public class FunctionKeySteps {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/FunctionKeySteps.java:13: warning: no comment
+[WARNING] public FunctionKeySteps(TestContext context) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/FunctionKeySteps.java:23: warning: no comment
+[WARNING] public void iClickTheButton(String buttonName) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/FunctionKeySteps.java:18: warning: no comment
+[WARNING] public void theKeyboardIsLocked() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/FunctionKeySteps.java:30: warning: no comment
+[WARNING] public void theKeyboardShouldBeUnlocked() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/IntegrationSteps.java:15: warning: no comment
+[WARNING] public IntegrationSteps(TestContext context) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/IntegrationSteps.java:20: warning: no comment
+[WARNING] public void aSessionWithAtRowColumn(String text, Integer row, Integer col) {
+[WARNING] ^
+[WARNING] 100 warnings
+[INFO] Generating "Surefire" report      --- maven-surefire-report-plugin:3.2.2:report
+[WARNING] Unable to locate Test Source XRef to link to - DISABLED
+[INFO] 
+[INFO] -------------------< com.rhlowery.term3270:utilities >--------------------
+[INFO] Building term3270 Utilities 1.0.0-SNAPSHOT                           [2/4]
+[INFO]   from utilities/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ utilities ---
+[INFO] Deleting /Users/loweryr/git/github/rhlowery/term3270/utilities/target
+[INFO] 
+[INFO] --- site:3.12.1:site (default-site) @ utilities ---
+[INFO] configuring report plugin org.apache.maven.plugins:maven-project-info-reports-plugin:3.5.0
+[INFO] 15 reports detected for maven-project-info-reports-plugin:3.5.0: ci-management, dependencies, dependency-info, dependency-management, distribution-management, index, issue-management, licenses, mailing-lists, modules, plugin-management, plugins, scm, summary, team
+[INFO] configuring report plugin org.apache.maven.plugins:maven-javadoc-plugin:3.6.3
+[INFO] preparing maven-javadoc-plugin:javadoc report requires 'generate-sources' forked phase execution
+[INFO] 
+[INFO] >>> javadoc:3.6.3:javadoc > generate-sources @ utilities >>>
+[INFO] 
+[INFO] --- jacoco:0.8.12:prepare-agent (default) @ utilities ---
+[INFO] argLine set to -javaagent:/Users/loweryr/.m2/repository/org/jacoco/org.jacoco.agent/0.8.12/org.jacoco.agent-0.8.12-runtime.jar=destfile=/Users/loweryr/git/github/rhlowery/term3270/utilities/target/jacoco.exec
+[INFO] 
+[INFO] <<< javadoc:3.6.3:javadoc < generate-sources @ utilities <<<
+[INFO] 
+[INFO] 'generate-sources' forked phase execution for maven-javadoc-plugin:javadoc report preparation done
+[INFO] preparing maven-javadoc-plugin:test-javadoc report requires 'generate-test-sources' forked phase execution
+[INFO] 
+[INFO] >>> javadoc:3.6.3:test-javadoc > generate-test-sources @ utilities >>>
+[INFO] 
+[INFO] --- jacoco:0.8.12:prepare-agent (default) @ utilities ---
+[INFO] argLine set to -javaagent:/Users/loweryr/.m2/repository/org/jacoco/org.jacoco.agent/0.8.12/org.jacoco.agent-0.8.12-runtime.jar=destfile=/Users/loweryr/git/github/rhlowery/term3270/utilities/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ utilities ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ utilities ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 19 source files with javac [debug target 17] to target/classes
+[INFO] 
+[INFO] <<< javadoc:3.6.3:test-javadoc < generate-test-sources @ utilities <<<
+[INFO] 
+[INFO] 'generate-test-sources' forked phase execution for maven-javadoc-plugin:test-javadoc report preparation done
+[INFO] 6 reports detected for maven-javadoc-plugin:3.6.3: aggregate-no-fork, javadoc, javadoc-no-fork, test-aggregate-no-fork, test-javadoc, test-javadoc-no-fork
+[INFO] configuring report plugin org.apache.maven.plugins:maven-surefire-report-plugin:3.2.2
+[INFO] preparing maven-surefire-report-plugin:report report requires '[surefire]test' forked phase execution
+[INFO] 
+[INFO] >>> surefire-report:3.2.2:report > [surefire]test @ utilities >>>
+[INFO] 
+[INFO] --- jacoco:0.8.12:prepare-agent (default) @ utilities ---
+[INFO] argLine set to -javaagent:/Users/loweryr/.m2/repository/org/jacoco/org.jacoco.agent/0.8.12/org.jacoco.agent-0.8.12-runtime.jar=destfile=/Users/loweryr/git/github/rhlowery/term3270/utilities/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ utilities ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ utilities ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ utilities ---
+[INFO] skip non existing resourceDirectory /Users/loweryr/git/github/rhlowery/term3270/utilities/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ utilities ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.2.2:test (default-test) @ utilities ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.12:report (report) @ utilities ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] 
+[INFO] <<< surefire-report:3.2.2:report < [surefire]test @ utilities <<<
+[INFO] 
+[INFO] '[surefire]test' forked phase execution for maven-surefire-report-plugin:report report preparation done
+[INFO] 3 reports detected for maven-surefire-report-plugin:3.2.2: failsafe-report-only, report, report-only
+[INFO] configuring report plugin org.jacoco:jacoco-maven-plugin:0.8.12
+[INFO] 1 report configured for jacoco-maven-plugin:0.8.12: report
+[INFO] configuring report plugin org.apache.maven.plugins:maven-checkstyle-plugin:3.3.1
+[INFO] 1 report configured for maven-checkstyle-plugin:3.3.1: checkstyle
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] Rendering site with default locale English (en)
+[INFO] Relativizing decoration links with respect to localized project URL: https://github.com/rhlowery/term3270/utilities
+[INFO] Rendering content with org.apache.maven.skins:maven-default-skin:jar:1.3 skin.
+[INFO] Skipped "Javadoc" report (maven-javadoc-plugin:3.6.3:javadoc), file "apidocs/index.html" already exists.
+[INFO] Skipped "Javadoc" report (maven-javadoc-plugin:3.6.3:javadoc-no-fork), file "apidocs/index.html" already exists.
+[INFO] Skipped "Surefire" report (maven-surefire-report-plugin:3.2.2:report-only), file "surefire-report.html" already exists.
+[INFO] Generating "Dependencies" report  --- maven-project-info-reports-plugin:3.5.0:dependencies
+[INFO] Generating "Dependency Information" report --- maven-project-info-reports-plugin:3.5.0:dependency-info
+[INFO] Generating "Dependency Management" report --- maven-project-info-reports-plugin:3.5.0:dependency-management
+[INFO] Generating "Distribution Management" report --- maven-project-info-reports-plugin:3.5.0:distribution-management
+[INFO] Generating "About" report         --- maven-project-info-reports-plugin:3.5.0:index
+[INFO] Generating "Plugin Management" report --- maven-project-info-reports-plugin:3.5.0:plugin-management
+[INFO] Generating "Plugins" report       --- maven-project-info-reports-plugin:3.5.0:plugins
+[INFO] Generating "Summary" report       --- maven-project-info-reports-plugin:3.5.0:summary
+[INFO] Generating "Javadoc" report       --- maven-javadoc-plugin:3.6.3:aggregate-no-fork
+[INFO] No previous run data found, generating javadoc.
+[WARNING] Javadoc Warnings
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/utilities/src/main/java/com/rhlowery/term3270/ScreenBuffer.java:55: warning: no comment
+[WARNING] public void setConverter(EbcdicConverter converter) {
+[WARNING] ^
+[WARNING] 1 warning
+[INFO] Generating "Surefire" report      --- maven-surefire-report-plugin:3.2.2:report
+[WARNING] Unable to locate Test Source XRef to link to - DISABLED
+[INFO] Generating "Checkstyle" report    --- maven-checkstyle-plugin:3.3.1:checkstyle
+[WARNING] Unable to locate Source XRef to link to - DISABLED
+[WARNING] Unable to locate Test Source XRef to link to - DISABLED
+[INFO] 
+[INFO] -------------------< com.rhlowery.term3270:term3270-app >-------------------
+[INFO] Building term3270 Application 1.0.0-SNAPSHOT                         [3/4]
+[INFO]   from term3270-app/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ term3270-app ---
+[INFO] Deleting /Users/loweryr/git/github/rhlowery/term3270/term3270-app/target
+[INFO] 
+[INFO] --- site:3.12.1:site (default-site) @ term3270-app ---
+[INFO] configuring report plugin org.apache.maven.plugins:maven-project-info-reports-plugin:3.5.0
+[INFO] 15 reports detected for maven-project-info-reports-plugin:3.5.0: ci-management, dependencies, dependency-info, dependency-management, distribution-management, index, issue-management, licenses, mailing-lists, modules, plugin-management, plugins, scm, summary, team
+[INFO] configuring report plugin org.apache.maven.plugins:maven-javadoc-plugin:3.6.3
+[INFO] preparing maven-javadoc-plugin:javadoc report requires 'generate-sources' forked phase execution
+[INFO] 
+[INFO] >>> javadoc:3.6.3:javadoc > generate-sources @ term3270-app >>>
+[INFO] 
+[INFO] --- jacoco:0.8.12:prepare-agent (default) @ term3270-app ---
+[INFO] argLine set to -javaagent:/Users/loweryr/.m2/repository/org/jacoco/org.jacoco.agent/0.8.12/org.jacoco.agent-0.8.12-runtime.jar=destfile=/Users/loweryr/git/github/rhlowery/term3270/term3270-app/target/jacoco.exec
+[INFO] 
+[INFO] <<< javadoc:3.6.3:javadoc < generate-sources @ term3270-app <<<
+[INFO] 
+[INFO] 'generate-sources' forked phase execution for maven-javadoc-plugin:javadoc report preparation done
+[INFO] preparing maven-javadoc-plugin:test-javadoc report requires 'generate-test-sources' forked phase execution
+[INFO] 
+[INFO] >>> javadoc:3.6.3:test-javadoc > generate-test-sources @ term3270-app >>>
+[INFO] 
+[INFO] --- jacoco:0.8.12:prepare-agent (default) @ term3270-app ---
+[INFO] argLine set to -javaagent:/Users/loweryr/.m2/repository/org/jacoco/org.jacoco.agent/0.8.12/org.jacoco.agent-0.8.12-runtime.jar=destfile=/Users/loweryr/git/github/rhlowery/term3270/term3270-app/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ term3270-app ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ term3270-app ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 8 source files with javac [debug target 17] to target/classes
+[INFO] 
+[INFO] <<< javadoc:3.6.3:test-javadoc < generate-test-sources @ term3270-app <<<
+[INFO] 
+[INFO] 'generate-test-sources' forked phase execution for maven-javadoc-plugin:test-javadoc report preparation done
+[INFO] 6 reports detected for maven-javadoc-plugin:3.6.3: aggregate-no-fork, javadoc, javadoc-no-fork, test-aggregate-no-fork, test-javadoc, test-javadoc-no-fork
+[INFO] configuring report plugin org.apache.maven.plugins:maven-surefire-report-plugin:3.2.2
+[INFO] preparing maven-surefire-report-plugin:report report requires '[surefire]test' forked phase execution
+[INFO] 
+[INFO] >>> surefire-report:3.2.2:report > [surefire]test @ term3270-app >>>
+[INFO] 
+[INFO] --- jacoco:0.8.12:prepare-agent (default) @ term3270-app ---
+[INFO] argLine set to -javaagent:/Users/loweryr/.m2/repository/org/jacoco/org.jacoco.agent/0.8.12/org.jacoco.agent-0.8.12-runtime.jar=destfile=/Users/loweryr/git/github/rhlowery/term3270/term3270-app/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ term3270-app ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ term3270-app ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 8 source files with javac [debug target 17] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ term3270-app ---
+[INFO] Copying 25 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ term3270-app ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 27 source files with javac [debug target 17] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.2.2:test (default-test) @ term3270-app ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.12:report (report) @ term3270-app ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] 
+[INFO] <<< surefire-report:3.2.2:report < [surefire]test @ term3270-app <<<
+[INFO] 
+[INFO] '[surefire]test' forked phase execution for maven-surefire-report-plugin:report report preparation done
+[INFO] 3 reports detected for maven-surefire-report-plugin:3.2.2: failsafe-report-only, report, report-only
+[INFO] configuring report plugin org.jacoco:jacoco-maven-plugin:0.8.12
+[INFO] 1 report configured for jacoco-maven-plugin:0.8.12: report
+[INFO] configuring report plugin org.apache.maven.plugins:maven-checkstyle-plugin:3.3.1
+[INFO] 1 report configured for maven-checkstyle-plugin:3.3.1: checkstyle
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] Rendering site with default locale English (en)
+[INFO] Relativizing decoration links with respect to localized project URL: https://github.com/rhlowery/term3270/term3270-app
+[INFO] Rendering content with org.apache.maven.skins:maven-default-skin:jar:1.3 skin.
+[INFO] Skipped "Javadoc" report (maven-javadoc-plugin:3.6.3:javadoc), file "apidocs/index.html" already exists.
+[INFO] Skipped "Javadoc" report (maven-javadoc-plugin:3.6.3:javadoc-no-fork), file "apidocs/index.html" already exists.
+[INFO] Skipped "Test Javadoc" report (maven-javadoc-plugin:3.6.3:test-javadoc), file "testapidocs/index.html" already exists.
+[INFO] Skipped "Test Javadoc" report (maven-javadoc-plugin:3.6.3:test-javadoc-no-fork), file "testapidocs/index.html" already exists.
+[INFO] Skipped "Surefire" report (maven-surefire-report-plugin:3.2.2:report-only), file "surefire-report.html" already exists.
+[INFO] Generating "Dependencies" report  --- maven-project-info-reports-plugin:3.5.0:dependencies
+[INFO] Generating "Dependency Information" report --- maven-project-info-reports-plugin:3.5.0:dependency-info
+[INFO] Generating "Dependency Management" report --- maven-project-info-reports-plugin:3.5.0:dependency-management
+[INFO] Generating "Distribution Management" report --- maven-project-info-reports-plugin:3.5.0:distribution-management
+[INFO] Generating "About" report         --- maven-project-info-reports-plugin:3.5.0:index
+[INFO] Generating "Plugin Management" report --- maven-project-info-reports-plugin:3.5.0:plugin-management
+[INFO] Generating "Plugins" report       --- maven-project-info-reports-plugin:3.5.0:plugins
+[INFO] Generating "Summary" report       --- maven-project-info-reports-plugin:3.5.0:summary
+[INFO] Generating "Javadoc" report       --- maven-javadoc-plugin:3.6.3:aggregate-no-fork
+[INFO] No previous run data found, generating javadoc.
+[WARNING] Javadoc Warnings
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/ConnectionDialog.java:30: warning: no comment
+[WARNING] private JComboBox<String> codepageCombo;
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/ConnectionDialog.java:35: warning: no comment
+[WARNING] private boolean confirmed = false;
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/ConnectionDialog.java:31: warning: no comment
+[WARNING] private JComboBox<String> emulationCombo;
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/ConnectionDialog.java:27: warning: no comment
+[WARNING] private JTextField hostField;
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/ConnectionDialog.java:28: warning: no comment
+[WARNING] private JTextField portField;
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/ConnectionDialog.java:33: warning: no comment
+[WARNING] private JCheckBox secureCheckBox;
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/ConnectionDialog.java:32: warning: no comment
+[WARNING] private JComboBox<String> sizeCombo;
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/ConnectionDialog.java:29: warning: no comment
+[WARNING] private JTextField typeField;
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/ConnectionDialog.java:34: warning: no comment
+[WARNING] private JCheckBox verifyHostnameCheckBox;
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/FileTransferDialog.java:27: warning: no comment
+[WARNING] private boolean approved = false;
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/FileTransferDialog.java:25: warning: no comment
+[WARNING] private final JTextField commandField = new JTextField("IND$FILE GET MY.DATA");
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/FileTransferDialog.java:24: warning: no comment
+[WARNING] private final JComboBox<String> modeBox = new JComboBox<>(new String[]{"Download (GET)", "Upload (PUT)"});
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/FileTransferDialog.java:26: warning: no comment
+[WARNING] private final JTextField pathField = new JTextField();
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/TerminalFrame.java:37: warning: no comment
+[WARNING] private String lastCodepage = EbcdicConverter.DEFAULT_CODEPAGE;
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/TerminalFrame.java:38: warning: no comment
+[WARNING] private String lastEmulationType = "3270";
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/TerminalFrame.java:32: warning: no comment
+[WARNING] private String lastHost;
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/TerminalFrame.java:33: warning: no comment
+[WARNING] private int lastPort;
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/TerminalFrame.java:35: warning: no comment
+[WARNING] private boolean lastSecure;
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/TerminalFrame.java:34: warning: no comment
+[WARNING] private String lastType;
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/TerminalFrame.java:36: warning: no comment
+[WARNING] private boolean lastVerifyHostname;
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/TerminalPanel.java:113: warning: no comment
+[WARNING] private int blinkCounter = 0;
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/TerminalPanel.java:35: warning: no comment
+[WARNING] private int charDescent;
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/TerminalPanel.java:34: warning: no comment
+[WARNING] private int charHeight;
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/TerminalPanel.java:33: warning: no comment
+[WARNING] private int charWidth;
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/TerminalPanel.java:32: warning: no comment
+[WARNING] private int cols = 80;
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/java/com/rhlowery/term3270/TerminalPanel.java:31: warning: no comment
+[WARNING] private int rows = 24;
+[WARNING] ^
+[WARNING] 26 warnings
+[INFO] Generating "Test Javadoc" report  --- maven-javadoc-plugin:3.6.3:test-aggregate-no-fork
+[INFO] Configuration changed, re-generating javadoc.
+[WARNING] Javadoc Warnings
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/AidResponseSteps.java:18: warning: no comment
+[WARNING] public AidResponseSteps(TestContext context) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/AidResponseSteps.java:76: warning: no comment
+[WARNING] public void iParseAWccWithResetMdtBitSet() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/AidResponseSteps.java:64: warning: no comment
+[WARNING] public void theFieldAtRowColumnShouldBeModified(Integer row, Integer col) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/AidResponseSteps.java:70: warning: no comment
+[WARNING] public void theFieldAtRowColumnShouldNotBeModified(Integer row, Integer col) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/AidResponseSteps.java:23: warning: no comment
+[WARNING] public void theOutboundDataShouldContainAid(String aidName) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/AidResponseSteps.java:31: warning: no comment
+[WARNING] public void theOutboundDataShouldContainCursorAddressAtRowColumn(Integer row, Integer col) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/AidResponseSteps.java:41: warning: no comment
+[WARNING] public void theOutboundDataShouldContainForFieldAtRowColumn(String expectedText, Integer row, Integer col) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/AttributeSteps.java:17: warning: no comment
+[WARNING] public AttributeSteps(TestContext context) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/AttributeSteps.java:29: warning: no comment
+[WARNING] public void aCellWithAttributeAtRowColumn(String attrName, Integer row, Integer col) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/AttributeSteps.java:22: warning: no comment
+[WARNING] public void aProtectedFieldAtRowColumn(Integer row, Integer col) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/AttributeSteps.java:78: warning: no comment
+[WARNING] public void theCellAtRowColumnShouldBe(Integer row, Integer col, String expectedColor) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/AttributeSteps.java:38: warning: no comment
+[WARNING] public void theCellAtRowColumnShouldBeIntensified(Integer row, Integer col) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/AttributeSteps.java:43: warning: no comment
+[WARNING] public void theHostParsesAColorForCellAtRowColumn(String colorName, Integer row, Integer col) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/BulkOrderSteps.java:17: warning: no comment
+[WARNING] public BulkOrderSteps(TestContext context) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/BulkOrderSteps.java:33: warning: no comment
+[WARNING] public void anUnprotectedFieldAtRowColumn(Integer row, Integer col) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/BulkOrderSteps.java:40: warning: no comment
+[WARNING] public void iParseAnEuaSequenceForRowColumn(Integer row, Integer col) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/BulkOrderSteps.java:22: warning: no comment
+[WARNING] public void iParseAnRaSequenceForRowColumnWithChar(Integer row, Integer col, String c) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CodepageSteps.java:30: warning: no comment
+[WARNING] public void aDefaultEbcdicConverter() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CodepageSteps.java:24: warning: no comment
+[WARNING] public void anEbcdicConverterUsingCodepage(
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CodepageSteps.java:69: warning: no comment
+[WARNING] public void anExceptionShouldBeThrown() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CodepageSteps.java:45: warning: no comment
+[WARNING] public void iCreateAConverterWithCodepage(
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CodepageSteps.java:40: warning: no comment
+[WARNING] public void iDecodeTheResult() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CodepageSteps.java:35: warning: no comment
+[WARNING] public void iEncodeTheCharacter(String ch) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CodepageSteps.java:63: warning: no comment
+[WARNING] public void theCodepageShouldBe(String expected) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CodepageSteps.java:55: warning: no comment
+[WARNING] public void theDecodedCharacterShouldBe(
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CommonSteps.java:17: warning: no comment
+[WARNING] public CommonSteps(TestContext context) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CommonSteps.java:42: warning: no comment
+[WARNING] public void aBlankTerminalBuffer() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CommonSteps.java:35: warning: no comment
+[WARNING] public void anEmptyScreen() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CommonSteps.java:69: warning: no comment
+[WARNING] public void iParseTheText(String text) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CommonSteps.java:56: warning: no comment
+[WARNING] public void iPressTheKey(String key) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CommonSteps.java:22: warning: no comment
+[WARNING] public void setUp() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CommonSteps.java:50: warning: no comment
+[WARNING] public void theSessionStatusShouldBe(String expectedStatus) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ConnectionSteps.java:25: warning: no comment
+[WARNING] public void aMainframeHostOnPort(String host, Integer requestedPort) throws IOException {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ConnectionSteps.java:39: warning: no comment
+[WARNING] public void aTerminalTypeOf(String termType) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ConnectionSteps.java:44: warning: no comment
+[WARNING] public void iAttemptToConnect() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ConnectionSteps.java:51: warning: no comment
+[WARNING] public void theTerminalScreenShouldBeInitialized() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ConnectionUISteps.java:18: warning: no comment
+[WARNING] public class ConnectionUISteps {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ConnectionUISteps.java:23: warning: no comment
+[WARNING] public ConnectionUISteps(TestContext context) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ConnectionUISteps.java:93: warning: no comment
+[WARNING] public void aMockServerIsAvailable() throws IOException {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ConnectionUISteps.java:28: warning: no comment
+[WARNING] public void aTerminalApplicationIsRunning() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ConnectionUISteps.java:125: warning: no comment
+[WARNING] public void iClick(String buttonText) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ConnectionUISteps.java:105: warning: no comment
+[WARNING] public void iEnterAsHostAndAsPort(String host, Integer port) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ConnectionUISteps.java:140: warning: no comment
+[WARNING] public void iSelectAsEmulationType(String type) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ConnectionUISteps.java:151: warning: no comment
+[WARNING] public void iSelectAsTerminalSize(String size) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ConnectionUISteps.java:35: warning: no comment
+[WARNING] public void iSelectFromTheMenu(String menuName, String itemName) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ConnectionUISteps.java:115: warning: no comment
+[WARNING] public void iToggleSecureConnectionTo(String secure) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ConnectionUISteps.java:120: warning: no comment
+[WARNING] public void iToggleVerifyHostnameTo(String verify) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ConnectionUISteps.java:88: warning: no comment
+[WARNING] public void theConnectionDialogIsOpen() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ConnectionUISteps.java:81: warning: no comment
+[WARNING] public void theConnectionDialogShouldBeVisible() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ConnectionUISteps.java:161: warning: no comment
+[WARNING] public void theSessionShouldBeInitializedWithColumnsAndRows(int cols, int rows) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ConnectionUISteps.java:135: warning: no comment
+[WARNING] public void theSessionShouldDisconnectAndThenReconnect() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ConnectionUISteps.java:145: warning: no comment
+[WARNING] public void theSessionShouldUseEmulation(String expected) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ConnectionUISteps.java:130: warning: no comment
+[WARNING] public void theSessionStatusShouldEventuallyBe(String status) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CursorNavigationSteps.java:8: warning: no comment
+[WARNING] public class CursorNavigationSteps {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CursorNavigationSteps.java:12: warning: no comment
+[WARNING] public CursorNavigationSteps(TestContext context) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CursorNavigationSteps.java:38: warning: no comment
+[WARNING] public void iPressTheBackspaceKey() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CursorNavigationSteps.java:33: warning: no comment
+[WARNING] public void iPressTheDownArrowKey() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CursorNavigationSteps.java:23: warning: no comment
+[WARNING] public void iPressTheLeftArrowKey() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CursorNavigationSteps.java:18: warning: no comment
+[WARNING] public void iPressTheRightArrowKey() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CursorNavigationSteps.java:28: warning: no comment
+[WARNING] public void iPressTheUpArrowKey() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CursorSteps.java:16: warning: no comment
+[WARNING] public CursorSteps(TestContext context) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CursorSteps.java:21: warning: no comment
+[WARNING] public void theCursorIsAtRowColumn(Integer row, Integer col) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/CursorSteps.java:28: warning: no comment
+[WARNING] public void theCursorShouldBeAtRowColumn(Integer row, Integer col) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/EbcdicSteps.java:16: warning: no comment
+[WARNING] public void iTranslateEbcdicByte(Integer ebcdicByte) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/EbcdicSteps.java:21: warning: no comment
+[WARNING] public void theAsciiCharacterShouldBe(String expected) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ExitSteps.java:9: warning: no comment
+[WARNING] public class ExitSteps {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ExitSteps.java:13: warning: no comment
+[WARNING] public ExitSteps(TestContext context) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ExitSteps.java:18: warning: no comment
+[WARNING] public void aConnectedSessionForExitTesting() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ExitSteps.java:25: warning: no comment
+[WARNING] public void iTriggerTheAction(String action) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ExitSteps.java:39: warning: no comment
+[WARNING] public void theApplicationShouldTerminate() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ExitSteps.java:34: warning: no comment
+[WARNING] public void theSessionShouldBeDisconnected() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ExtendedAttributeSteps.java:17: warning: no comment
+[WARNING] public ExtendedAttributeSteps(TestContext context) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ExtendedAttributeSteps.java:74: warning: no comment
+[WARNING] public void iParseAnSaSequenceFor(String highlightName) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ExtendedAttributeSteps.java:89: warning: no comment
+[WARNING] public void iParseAnSaSequenceForColor(String colorName) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ExtendedAttributeSteps.java:22: warning: no comment
+[WARNING] public void iParseAnSfeSequenceWithColorAtRowColumn(String colorName, Integer row, Integer col) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ExtendedAttributeSteps.java:51: warning: no comment
+[WARNING] public void iParseAnSfeSequenceWithHighlightAtRowColumn(String hlName, Integer row, Integer col) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ExtendedAttributeSteps.java:108: warning: no comment
+[WARNING] public void theCharacterAtRowColumnShouldHaveColor(Integer row, Integer col, String colorName) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/ExtendedAttributeSteps.java:115: warning: no comment
+[WARNING] public void theCharacterAtRowColumnShouldHaveHighlight(Integer row, Integer col, String hlName) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/FieldValidationSteps.java:14: warning: no comment
+[WARNING] public FieldValidationSteps(TestContext context) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/FieldValidationSteps.java:19: warning: no comment
+[WARNING] public void aNumericFieldAtRowColumn(Integer row, Integer col) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/FieldValidationSteps.java:27: warning: no comment
+[WARNING] public void iTypeAtRowColumn(String text, Integer row, Integer col) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/FileTransferSteps.java:14: warning: no comment
+[WARNING] public class FileTransferSteps {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/FileTransferSteps.java:19: warning: no comment
+[WARNING] public FileTransferSteps(TestContext context) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/FileTransferSteps.java:51: warning: no comment
+[WARNING] public void aFileTransferIsActiveFor(String filename) throws Exception {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/FileTransferSteps.java:90: warning: no comment
+[WARNING] public void aLocalFileWithContent(String filename, String content) throws Exception {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/FileTransferSteps.java:95: warning: no comment
+[WARNING] public void iUploadTheFileWithCommand(String filename, String command) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/FileTransferSteps.java:24: warning: no comment
+[WARNING] public void theHostSendsARequest(String type) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/FileTransferSteps.java:76: warning: no comment
+[WARNING] public void theHostSendsAWithAIndicator(String type, String indicator) throws Exception {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/FileTransferSteps.java:56: warning: no comment
+[WARNING] public void theHostSendsAWithData(String type, String data) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/FileTransferSteps.java:81: warning: no comment
+[WARNING] public void theLocalFileShouldContain(String filename, String expected) throws Exception {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/FileTransferSteps.java:46: warning: no comment
+[WARNING] public void theReplyShouldContainTheFileTransferAttribute(String attr) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/FileTransferSteps.java:33: warning: no comment
+[WARNING] public void theTerminalShouldReplyWithAIncludingSupport(String replyType, String support) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/FileTransferSteps.java:100: warning: no comment
+[WARNING] public void theTerminalShouldSendAStructuredFieldWithData(String expected) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/FunctionKeySteps.java:9: warning: no comment
+[WARNING] public class FunctionKeySteps {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/FunctionKeySteps.java:13: warning: no comment
+[WARNING] public FunctionKeySteps(TestContext context) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/FunctionKeySteps.java:23: warning: no comment
+[WARNING] public void iClickTheButton(String buttonName) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/FunctionKeySteps.java:18: warning: no comment
+[WARNING] public void theKeyboardIsLocked() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/FunctionKeySteps.java:30: warning: no comment
+[WARNING] public void theKeyboardShouldBeUnlocked() {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/IntegrationSteps.java:15: warning: no comment
+[WARNING] public IntegrationSteps(TestContext context) {
+[WARNING] ^
+[WARNING] /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/test/java/com/rhlowery/term3270/IntegrationSteps.java:20: warning: no comment
+[WARNING] public void aSessionWithAtRowColumn(String text, Integer row, Integer col) {
+[WARNING] ^
+[WARNING] 100 warnings
+[INFO] Generating "Surefire" report      --- maven-surefire-report-plugin:3.2.2:report
+[WARNING] Unable to locate Test Source XRef to link to - DISABLED
+[INFO] Generating "Checkstyle" report    --- maven-checkstyle-plugin:3.3.1:checkstyle
+[WARNING] Unable to locate Source XRef to link to - DISABLED
+[WARNING] Unable to locate Test Source XRef to link to - DISABLED
+[INFO] 
+[INFO] --- allure:2.12.0:report (allure-report) @ term3270-app ---
+[INFO] Allure installation directory /Users/loweryr/git/github/rhlowery/term3270/term3270-app/.allure
+[INFO] Try to finding out allure 2.20.1
+[INFO] Generate Allure report (report) with version 2.20.1
+[INFO] Generate Allure report to /Users/loweryr/git/github/rhlowery/term3270/term3270-app/target/site/allure-report
+[ERROR] Directory /Users/loweryr/git/github/rhlowery/term3270/term3270-app/target/allure-results not found.
+[WARNING] Allure report was skipped because there is no results directories found.
+[INFO] 
+[INFO] --------------------< com.rhlowery.term3270:plugins >---------------------
+[INFO] Building term3270 Plugins 1.0.0-SNAPSHOT                             [4/4]
+[INFO]   from plugins/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ plugins ---
+[INFO] Deleting /Users/loweryr/git/github/rhlowery/term3270/plugins/target
+[INFO] 
+[INFO] --- site:3.12.1:site (default-site) @ plugins ---
+[INFO] configuring report plugin org.apache.maven.plugins:maven-project-info-reports-plugin:3.5.0
+[INFO] 15 reports detected for maven-project-info-reports-plugin:3.5.0: ci-management, dependencies, dependency-info, dependency-management, distribution-management, index, issue-management, licenses, mailing-lists, modules, plugin-management, plugins, scm, summary, team
+[INFO] configuring report plugin org.apache.maven.plugins:maven-javadoc-plugin:3.6.3
+[INFO] preparing maven-javadoc-plugin:javadoc report requires 'generate-sources' forked phase execution
+[INFO] 
+[INFO] >>> javadoc:3.6.3:javadoc > generate-sources @ plugins >>>
+[INFO] 
+[INFO] --- jacoco:0.8.12:prepare-agent (default) @ plugins ---
+[INFO] argLine set to -javaagent:/Users/loweryr/.m2/repository/org/jacoco/org.jacoco.agent/0.8.12/org.jacoco.agent-0.8.12-runtime.jar=destfile=/Users/loweryr/git/github/rhlowery/term3270/plugins/target/jacoco.exec
+[INFO] 
+[INFO] <<< javadoc:3.6.3:javadoc < generate-sources @ plugins <<<
+[INFO] 
+[INFO] 'generate-sources' forked phase execution for maven-javadoc-plugin:javadoc report preparation done
+[INFO] preparing maven-javadoc-plugin:test-javadoc report requires 'generate-test-sources' forked phase execution
+[INFO] 
+[INFO] >>> javadoc:3.6.3:test-javadoc > generate-test-sources @ plugins >>>
+[INFO] 
+[INFO] --- jacoco:0.8.12:prepare-agent (default) @ plugins ---
+[INFO] argLine set to -javaagent:/Users/loweryr/.m2/repository/org/jacoco/org.jacoco.agent/0.8.12/org.jacoco.agent-0.8.12-runtime.jar=destfile=/Users/loweryr/git/github/rhlowery/term3270/plugins/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ plugins ---
+[INFO] skip non existing resourceDirectory /Users/loweryr/git/github/rhlowery/term3270/plugins/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ plugins ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] <<< javadoc:3.6.3:test-javadoc < generate-test-sources @ plugins <<<
+[INFO] 
+[INFO] 'generate-test-sources' forked phase execution for maven-javadoc-plugin:test-javadoc report preparation done
+[INFO] 6 reports detected for maven-javadoc-plugin:3.6.3: aggregate-no-fork, javadoc, javadoc-no-fork, test-aggregate-no-fork, test-javadoc, test-javadoc-no-fork
+[INFO] configuring report plugin org.apache.maven.plugins:maven-surefire-report-plugin:3.2.2
+[INFO] preparing maven-surefire-report-plugin:report report requires '[surefire]test' forked phase execution
+[INFO] 
+[INFO] >>> surefire-report:3.2.2:report > [surefire]test @ plugins >>>
+[INFO] 
+[INFO] --- jacoco:0.8.12:prepare-agent (default) @ plugins ---
+[INFO] argLine set to -javaagent:/Users/loweryr/.m2/repository/org/jacoco/org.jacoco.agent/0.8.12/org.jacoco.agent-0.8.12-runtime.jar=destfile=/Users/loweryr/git/github/rhlowery/term3270/plugins/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ plugins ---
+[INFO] skip non existing resourceDirectory /Users/loweryr/git/github/rhlowery/term3270/plugins/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ plugins ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ plugins ---
+[INFO] skip non existing resourceDirectory /Users/loweryr/git/github/rhlowery/term3270/plugins/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ plugins ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.2.2:test (default-test) @ plugins ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.12:report (report) @ plugins ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] 
+[INFO] <<< surefire-report:3.2.2:report < [surefire]test @ plugins <<<
+[INFO] 
+[INFO] '[surefire]test' forked phase execution for maven-surefire-report-plugin:report report preparation done
+[INFO] 3 reports detected for maven-surefire-report-plugin:3.2.2: failsafe-report-only, report, report-only
+[INFO] configuring report plugin org.jacoco:jacoco-maven-plugin:0.8.12
+[INFO] 1 report configured for jacoco-maven-plugin:0.8.12: report
+[INFO] configuring report plugin org.apache.maven.plugins:maven-checkstyle-plugin:3.3.1
+[INFO] 1 report configured for maven-checkstyle-plugin:3.3.1: checkstyle
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] Rendering site with default locale English (en)
+[INFO] Relativizing decoration links with respect to localized project URL: https://github.com/rhlowery/term3270/plugins
+[INFO] Rendering content with org.apache.maven.skins:maven-default-skin:jar:1.3 skin.
+[INFO] Skipped "Surefire" report (maven-surefire-report-plugin:3.2.2:report-only), file "surefire-report.html" already exists.
+[INFO] Generating "Dependencies" report  --- maven-project-info-reports-plugin:3.5.0:dependencies
+[INFO] Generating "Dependency Information" report --- maven-project-info-reports-plugin:3.5.0:dependency-info
+[INFO] Generating "Dependency Management" report --- maven-project-info-reports-plugin:3.5.0:dependency-management
+[INFO] Generating "Distribution Management" report --- maven-project-info-reports-plugin:3.5.0:distribution-management
+[INFO] Generating "About" report         --- maven-project-info-reports-plugin:3.5.0:index
+[INFO] Generating "Plugin Management" report --- maven-project-info-reports-plugin:3.5.0:plugin-management
+[INFO] Generating "Plugins" report       --- maven-project-info-reports-plugin:3.5.0:plugins
+[INFO] Generating "Summary" report       --- maven-project-info-reports-plugin:3.5.0:summary
+[INFO] Generating "Surefire" report      --- maven-surefire-report-plugin:3.2.2:report
+[WARNING] Unable to locate Test Source XRef to link to - DISABLED
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for term3270 Parent 1.0.0-SNAPSHOT:
+[INFO] 
+[INFO] term3270 Parent ...................................... SUCCESS [  2.622 s]
+[INFO] term3270 Utilities ................................... SUCCESS [  3.323 s]
+[INFO] term3270 Application ................................. SUCCESS [  3.147 s]
+[INFO] term3270 Plugins ..................................... SUCCESS [  0.313 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  9.444 s
+[INFO] Finished at: 2026-05-01T11:20:42-04:00
+[INFO] ------------------------------------------------------------------------

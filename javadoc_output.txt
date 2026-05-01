@@ -1,0 +1,83 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] term3270 Parent                                                      [pom]
+[INFO] term3270 Utilities                                                   [jar]
+[INFO] term3270 Application                                                 [jar]
+[INFO] term3270 Plugins                                                     [jar]
+[INFO] 
+[INFO] -----------------< com.rhlowery.term3270:term3270-parent >------------------
+[INFO] Building term3270 Parent 1.0.0-SNAPSHOT                              [1/4]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] >>> javadoc:3.12.0:javadoc (default-cli) > generate-sources @ term3270-parent >>>
+[INFO] 
+[INFO] --- jacoco:0.8.12:prepare-agent (default) @ term3270-parent ---
+[INFO] argLine set to -javaagent:/Users/loweryr/.m2/repository/org/jacoco/org.jacoco.agent/0.8.12/org.jacoco.agent-0.8.12-runtime.jar=destfile=/Users/loweryr/git/github/rhlowery/term3270/target/jacoco.exec
+[INFO] 
+[INFO] <<< javadoc:3.12.0:javadoc (default-cli) < generate-sources @ term3270-parent <<<
+[INFO] 
+[INFO] 
+[INFO] --- javadoc:3.12.0:javadoc (default-cli) @ term3270-parent ---
+[INFO] Skipping org.apache.maven.plugins:maven-javadoc-plugin:3.12.0:javadoc report goal
+[INFO] 
+[INFO] -------------------< com.rhlowery.term3270:utilities >--------------------
+[INFO] Building term3270 Utilities 1.0.0-SNAPSHOT                           [2/4]
+[INFO]   from utilities/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> javadoc:3.12.0:javadoc (default-cli) > generate-sources @ utilities >>>
+[INFO] 
+[INFO] --- jacoco:0.8.12:prepare-agent (default) @ utilities ---
+[INFO] argLine set to -javaagent:/Users/loweryr/.m2/repository/org/jacoco/org.jacoco.agent/0.8.12/org.jacoco.agent-0.8.12-runtime.jar=destfile=/Users/loweryr/git/github/rhlowery/term3270/utilities/target/jacoco.exec
+[INFO] 
+[INFO] <<< javadoc:3.12.0:javadoc (default-cli) < generate-sources @ utilities <<<
+[INFO] 
+[INFO] 
+[INFO] --- javadoc:3.12.0:javadoc (default-cli) @ utilities ---
+[INFO] 
+[INFO] -------------------< com.rhlowery.term3270:term3270-app >-------------------
+[INFO] Building term3270 Application 1.0.0-SNAPSHOT                         [3/4]
+[INFO]   from term3270-app/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> javadoc:3.12.0:javadoc (default-cli) > generate-sources @ term3270-app >>>
+[INFO] 
+[INFO] --- jacoco:0.8.12:prepare-agent (default) @ term3270-app ---
+[INFO] argLine set to -javaagent:/Users/loweryr/.m2/repository/org/jacoco/org.jacoco.agent/0.8.12/org.jacoco.agent-0.8.12-runtime.jar=destfile=/Users/loweryr/git/github/rhlowery/term3270/term3270-app/target/jacoco.exec
+[INFO] 
+[INFO] <<< javadoc:3.12.0:javadoc (default-cli) < generate-sources @ term3270-app <<<
+[INFO] 
+[INFO] 
+[INFO] --- javadoc:3.12.0:javadoc (default-cli) @ term3270-app ---
+[INFO] 
+[INFO] --------------------< com.rhlowery.term3270:plugins >---------------------
+[INFO] Building term3270 Plugins 1.0.0-SNAPSHOT                             [4/4]
+[INFO]   from plugins/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> javadoc:3.12.0:javadoc (default-cli) > generate-sources @ plugins >>>
+[INFO] 
+[INFO] --- jacoco:0.8.12:prepare-agent (default) @ plugins ---
+[INFO] argLine set to -javaagent:/Users/loweryr/.m2/repository/org/jacoco/org.jacoco.agent/0.8.12/org.jacoco.agent-0.8.12-runtime.jar=destfile=/Users/loweryr/git/github/rhlowery/term3270/plugins/target/jacoco.exec
+[INFO] 
+[INFO] <<< javadoc:3.12.0:javadoc (default-cli) < generate-sources @ plugins <<<
+[INFO] 
+[INFO] 
+[INFO] --- javadoc:3.12.0:javadoc (default-cli) @ plugins ---
+[INFO] Skipping org.apache.maven.plugins:maven-javadoc-plugin:3.12.0:javadoc report goal
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for term3270 Parent 1.0.0-SNAPSHOT:
+[INFO] 
+[INFO] term3270 Parent ...................................... SUCCESS [  0.244 s]
+[INFO] term3270 Utilities ................................... SUCCESS [  0.099 s]
+[INFO] term3270 Application ................................. SUCCESS [  0.108 s]
+[INFO] term3270 Plugins ..................................... SUCCESS [  0.006 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.607 s
+[INFO] Finished at: 2026-05-01T11:18:31-04:00
+[INFO] ------------------------------------------------------------------------

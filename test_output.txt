@@ -1,0 +1,300 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< com.rhlowery.term3270:term3270-app >-------------------
+[INFO] Building term3270-app 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ term3270-app ---
+[INFO] skip non existing resourceDirectory /Users/loweryr/git/github/rhlowery/term3270/term3270-app/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ term3270-app ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ term3270-app ---
+[INFO] Copying 14 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ term3270-app ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.2.2:test (default-test) @ term3270-app ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.rhlowery.term3270.RunCucumberTest
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+
+Scenario: Sending Modified Data on ENTER                                 # com/rhlowery/term3270/AidResponse.feature:3
+  Given a blank terminal buffer                                          # com.rhlowery.term3270.CommonSteps.aBlankTerminalBuffer()
+  And an unprotected field at row 1 column 1                             # com.rhlowery.term3270.BulkOrderSteps.anUnprotectedFieldAtRowColumn(java.lang.Integer,java.lang.Integer)
+DEBUG: ScreenBufferSteps created with TestContext: 619929778
+DEBUG: IntegrationSteps created with TestContext: 619929778
+DEBUG: ScreenBufferSteps.iWriteAtRowColumn buffer identity: 454160179
+  And I write "FOO" at row 1 column 2                                    # com.rhlowery.term3270.ScreenBufferSteps.iWriteAtRowColumn(java.lang.String,java.lang.Integer,java.lang.Integer)
+  When I press the "ENTER" key                                           # com.rhlowery.term3270.CommonSteps.iPressTheKey(java.lang.String)
+  Then the outbound data should contain AID "ENTER"                      # com.rhlowery.term3270.AidResponseSteps.theOutboundDataShouldContainAid(java.lang.String)
+  And the outbound data should contain cursor address at row 1 column 5  # com.rhlowery.term3270.AidResponseSteps.theOutboundDataShouldContainCursorAddressAtRowColumn(java.lang.Integer,java.lang.Integer)
+  And the outbound data should contain "FOO" for field at row 1 column 1 # com.rhlowery.term3270.AidResponseSteps.theOutboundDataShouldContainForFieldAtRowColumn(java.lang.String,java.lang.Integer,java.lang.Integer)
+
+Scenario: Resetting MDT on WCC                            # com/rhlowery/term3270/AidResponse.feature:12
+  Given a blank terminal buffer                           # com.rhlowery.term3270.CommonSteps.aBlankTerminalBuffer()
+  And an unprotected field at row 1 column 1              # com.rhlowery.term3270.BulkOrderSteps.anUnprotectedFieldAtRowColumn(java.lang.Integer,java.lang.Integer)
+DEBUG: ScreenBufferSteps created with TestContext: 710220387
+DEBUG: IntegrationSteps created with TestContext: 710220387
+DEBUG: ScreenBufferSteps.iWriteAtRowColumn buffer identity: 454160179
+  And I write "BAR" at row 1 column 2                     # com.rhlowery.term3270.ScreenBufferSteps.iWriteAtRowColumn(java.lang.String,java.lang.Integer,java.lang.Integer)
+  Then the field at row 1 column 1 should be modified     # com.rhlowery.term3270.AidResponseSteps.theFieldAtRowColumnShouldBeModified(java.lang.Integer,java.lang.Integer)
+  When I parse a WCC with reset MDT bit set               # com.rhlowery.term3270.AidResponseSteps.iParseAWccWithResetMdtBitSet()
+  Then the field at row 1 column 1 should not be modified # com.rhlowery.term3270.AidResponseSteps.theFieldAtRowColumnShouldNotBeModified(java.lang.Integer,java.lang.Integer)
+
+Scenario: Protected fields prevent data entry         # com/rhlowery/term3270/Attributes.feature:6
+  Given a blank terminal buffer                       # com.rhlowery.term3270.CommonSteps.aBlankTerminalBuffer()
+  And a protected field at row 5 column 10            # com.rhlowery.term3270.AttributeSteps.aProtectedFieldAtRowColumn(java.lang.Integer,java.lang.Integer)
+DEBUG: ScreenBufferSteps created with TestContext: 1369468094
+DEBUG: IntegrationSteps created with TestContext: 1369468094
+DEBUG: ScreenBufferSteps.iWriteAtRowColumn buffer identity: 454160179
+  When I write "TEST" at row 5 column 10              # com.rhlowery.term3270.ScreenBufferSteps.iWriteAtRowColumn(java.lang.String,java.lang.Integer,java.lang.Integer)
+  Then the character at row 5 column 10 should be ' ' # com.rhlowery.term3270.ScreenBufferSteps.theCharacterAtRowColumnShouldBe(java.lang.Integer,java.lang.Integer,java.lang.String)
+
+Scenario: Intensified display                                 # com/rhlowery/term3270/Attributes.feature:12
+  Given a cell with "INTENSIFIED" attribute at row 1 column 1 # com.rhlowery.term3270.AttributeSteps.aCellWithAttributeAtRowColumn(java.lang.String,java.lang.Integer,java.lang.Integer)
+  Then the cell at row 1 column 1 should be intensified       # com.rhlowery.term3270.AttributeSteps.theCellAtRowColumnShouldBeIntensified(java.lang.Integer,java.lang.Integer)
+
+Scenario: Repeating a character to an address (RA)              # com/rhlowery/term3270/BulkOrders.feature:6
+  Given an empty screen                                         # com.rhlowery.term3270.CommonSteps.anEmptyScreen()
+  When I parse an RA sequence for row 1 column 10 with char '*' # com.rhlowery.term3270.BulkOrderSteps.iParseAnRaSequenceForRowColumnWithChar(java.lang.Integer,java.lang.Integer,java.lang.String)
+DEBUG: ScreenBufferSteps created with TestContext: 492252770
+DEBUG: IntegrationSteps created with TestContext: 492252770
+  Then the character at row 1 column 1 should be '*'            # com.rhlowery.term3270.ScreenBufferSteps.theCharacterAtRowColumnShouldBe(java.lang.Integer,java.lang.Integer,java.lang.String)
+  And the character at row 1 column 9 should be '*'             # com.rhlowery.term3270.ScreenBufferSteps.theCharacterAtRowColumnShouldBe(java.lang.Integer,java.lang.Integer,java.lang.String)
+  And the current buffer address should be 9                    # com.rhlowery.term3270.ParserSteps.theCurrentBufferAddressShouldBe(java.lang.Integer)
+
+Scenario: Erasing unprotected fields to an address (EUA) # com/rhlowery/term3270/BulkOrders.feature:13
+  Given a blank terminal buffer                          # com.rhlowery.term3270.CommonSteps.aBlankTerminalBuffer()
+  And an unprotected field at row 1 column 1             # com.rhlowery.term3270.BulkOrderSteps.anUnprotectedFieldAtRowColumn(java.lang.Integer,java.lang.Integer)
+DEBUG: ScreenBufferSteps created with TestContext: 1017792343
+DEBUG: IntegrationSteps created with TestContext: 1017792343
+DEBUG: ScreenBufferSteps.iWriteAtRowColumn buffer identity: 454160179
+  And I write "HELLO" at row 1 column 1                  # com.rhlowery.term3270.ScreenBufferSteps.iWriteAtRowColumn(java.lang.String,java.lang.Integer,java.lang.Integer)
+  And a protected field at row 1 column 10               # com.rhlowery.term3270.AttributeSteps.aProtectedFieldAtRowColumn(java.lang.Integer,java.lang.Integer)
+  When I parse the SBA sequence for row 1 column 1       # com.rhlowery.term3270.ParserSteps.iParseTheSbaSequenceForRowColumn(java.lang.Integer,java.lang.Integer)
+  And I parse an EUA sequence for row 1 column 10        # com.rhlowery.term3270.BulkOrderSteps.iParseAnEuaSequenceForRowColumn(java.lang.Integer,java.lang.Integer)
+  Then the character at row 1 column 1 should be ' '     # com.rhlowery.term3270.ScreenBufferSteps.theCharacterAtRowColumnShouldBe(java.lang.Integer,java.lang.Integer,java.lang.String)
+  And the character at row 1 column 10 should be ' '     # com.rhlowery.term3270.ScreenBufferSteps.theCharacterAtRowColumnShouldBe(java.lang.Integer,java.lang.Integer,java.lang.String)
+
+Scenario Outline: Successful connection to a host      # com/rhlowery/term3270/Connection.feature:15
+  Given a mainframe host "hercules.local" on port 3270 # com.rhlowery.term3270.ConnectionSteps.aMainframeHostOnPort(java.lang.String,java.lang.Integer)
+  And a terminal type of "IBM-3278-2"                  # com.rhlowery.term3270.ConnectionSteps.aTerminalTypeOf(java.lang.String)
+  When I attempt to connect                            # com.rhlowery.term3270.ConnectionSteps.iAttemptToConnect()
+  Then the session status should be "CONNECTED"        # com.rhlowery.term3270.CommonSteps.theSessionStatusShouldBe(java.lang.String)
+  And the terminal screen should be initialized        # com.rhlowery.term3270.ConnectionSteps.theTerminalScreenShouldBeInitialized()
+
+Scenario Outline: Successful connection to a host  # com/rhlowery/term3270/Connection.feature:16
+  Given a mainframe host "zos.test.com" on port 23 # com.rhlowery.term3270.ConnectionSteps.aMainframeHostOnPort(java.lang.String,java.lang.Integer)
+  And a terminal type of "IBM-3278-4"              # com.rhlowery.term3270.ConnectionSteps.aTerminalTypeOf(java.lang.String)
+  When I attempt to connect                        # com.rhlowery.term3270.ConnectionSteps.iAttemptToConnect()
+  Then the session status should be "CONNECTED"    # com.rhlowery.term3270.CommonSteps.theSessionStatusShouldBe(java.lang.String)
+  And the terminal screen should be initialized    # com.rhlowery.term3270.ConnectionSteps.theTerminalScreenShouldBeInitialized()
+
+Scenario: Tabbing to the next unprotected field # com/rhlowery/term3270/Cursor.feature:6
+  Given an empty screen                         # com.rhlowery.term3270.CommonSteps.anEmptyScreen()
+  And an unprotected field at row 1 column 9    # com.rhlowery.term3270.BulkOrderSteps.anUnprotectedFieldAtRowColumn(java.lang.Integer,java.lang.Integer)
+  And an unprotected field at row 2 column 9    # com.rhlowery.term3270.BulkOrderSteps.anUnprotectedFieldAtRowColumn(java.lang.Integer,java.lang.Integer)
+  And the cursor is at row 1 column 1           # com.rhlowery.term3270.CursorSteps.theCursorIsAtRowColumn(java.lang.Integer,java.lang.Integer)
+  When I press the "TAB" key                    # com.rhlowery.term3270.CommonSteps.iPressTheKey(java.lang.String)
+  Then the cursor should be at row 1 column 10  # com.rhlowery.term3270.CursorSteps.theCursorShouldBeAtRowColumn(java.lang.Integer,java.lang.Integer)
+  When I press the "TAB" key                    # com.rhlowery.term3270.CommonSteps.iPressTheKey(java.lang.String)
+  Then the cursor should be at row 2 column 10  # com.rhlowery.term3270.CursorSteps.theCursorShouldBeAtRowColumn(java.lang.Integer,java.lang.Integer)
+
+Scenario: Backtabbing to the previous unprotected field # com/rhlowery/term3270/Cursor.feature:16
+  Given an empty screen                                 # com.rhlowery.term3270.CommonSteps.anEmptyScreen()
+  And an unprotected field at row 1 column 9            # com.rhlowery.term3270.BulkOrderSteps.anUnprotectedFieldAtRowColumn(java.lang.Integer,java.lang.Integer)
+  And an unprotected field at row 2 column 9            # com.rhlowery.term3270.BulkOrderSteps.anUnprotectedFieldAtRowColumn(java.lang.Integer,java.lang.Integer)
+  And the cursor is at row 2 column 15                  # com.rhlowery.term3270.CursorSteps.theCursorIsAtRowColumn(java.lang.Integer,java.lang.Integer)
+  When I press the "BACK_TAB" key                       # com.rhlowery.term3270.CommonSteps.iPressTheKey(java.lang.String)
+  Then the cursor should be at row 2 column 10          # com.rhlowery.term3270.CursorSteps.theCursorShouldBeAtRowColumn(java.lang.Integer,java.lang.Integer)
+  When I press the "BACK_TAB" key                       # com.rhlowery.term3270.CommonSteps.iPressTheKey(java.lang.String)
+  Then the cursor should be at row 1 column 10          # com.rhlowery.term3270.CursorSteps.theCursorShouldBeAtRowColumn(java.lang.Integer,java.lang.Integer)
+
+Scenario: Translating EBCDIC alphanumeric characters # com/rhlowery/term3270/Ebcdic.feature:6
+  When I translate EBCDIC byte 193                   # com.rhlowery.term3270.EbcdicSteps.iTranslateEbcdicByte(java.lang.Integer)
+  Then the ASCII character should be "A"             # com.rhlowery.term3270.EbcdicSteps.theAsciiCharacterShouldBe(java.lang.String)
+  When I translate EBCDIC byte 241                   # com.rhlowery.term3270.EbcdicSteps.iTranslateEbcdicByte(java.lang.Integer)
+  Then the ASCII character should be "1"             # com.rhlowery.term3270.EbcdicSteps.theAsciiCharacterShouldBe(java.lang.String)
+
+Scenario: Handling special characters    # com/rhlowery/term3270/Ebcdic.feature:12
+  When I translate EBCDIC byte 75        # com.rhlowery.term3270.EbcdicSteps.iTranslateEbcdicByte(java.lang.Integer)
+  Then the ASCII character should be "." # com.rhlowery.term3270.EbcdicSteps.theAsciiCharacterShouldBe(java.lang.String)
+
+Scenario: Setting field color via SFE                               # com/rhlowery/term3270/ExtendedAttributes.feature:6
+  Given a blank terminal buffer                                     # com.rhlowery.term3270.CommonSteps.aBlankTerminalBuffer()
+DEBUG: Modifying attr 827579900 type 66 to value 241
+DEBUG: Attr color is now BLUE, highlight is NORMAL
+  When I parse an SFE sequence with color "BLUE" at row 1 column 10 # com.rhlowery.term3270.ExtendedAttributeSteps.iParseAnSfeSequenceWithColorAtRowColumn(java.lang.String,java.lang.Integer,java.lang.Integer)
+  And I parse the text "COLOR"                                      # com.rhlowery.term3270.CommonSteps.iParseTheText(java.lang.String)
+  Then the character at row 1 column 11 should have color "BLUE"    # com.rhlowery.term3270.ExtendedAttributeSteps.theCharacterAtRowColumnShouldHaveColor(java.lang.Integer,java.lang.Integer,java.lang.String)
+
+Scenario: Setting field highlight via SFE                                     # com/rhlowery/term3270/ExtendedAttributes.feature:12
+  Given a blank terminal buffer                                               # com.rhlowery.term3270.CommonSteps.aBlankTerminalBuffer()
+DEBUG: Modifying attr 612716569 type 65 to value 244
+DEBUG: Attr color is now NEUTRAL, highlight is UNDERSCORE
+  When I parse an SFE sequence with highlight "UNDERSCORE" at row 1 column 10 # com.rhlowery.term3270.ExtendedAttributeSteps.iParseAnSfeSequenceWithHighlightAtRowColumn(java.lang.String,java.lang.Integer,java.lang.Integer)
+  And I parse the text "HL"                                                   # com.rhlowery.term3270.CommonSteps.iParseTheText(java.lang.String)
+  Then the character at row 1 column 11 should have highlight "UNDERSCORE"    # com.rhlowery.term3270.ExtendedAttributeSteps.theCharacterAtRowColumnShouldHaveHighlight(java.lang.Integer,java.lang.Integer,java.lang.String)
+
+Scenario: Applying highlighting via SA                                    # com/rhlowery/term3270/ExtendedAttributes.feature:18
+  Given a blank terminal buffer                                           # com.rhlowery.term3270.CommonSteps.aBlankTerminalBuffer()
+  When I parse the SBA sequence for row 1 column 1                        # com.rhlowery.term3270.ParserSteps.iParseTheSbaSequenceForRowColumn(java.lang.Integer,java.lang.Integer)
+DEBUG: Modifying attr 985487390 type 65 to value 244
+DEBUG: Attr color is now NEUTRAL, highlight is UNDERSCORE
+  And I parse an SA sequence for "UNDERSCORE"                             # com.rhlowery.term3270.ExtendedAttributeSteps.iParseAnSaSequenceFor(java.lang.String)
+  And I parse the text "TEST"                                             # com.rhlowery.term3270.CommonSteps.iParseTheText(java.lang.String)
+  Then the character at row 1 column 1 should have highlight "UNDERSCORE" # com.rhlowery.term3270.ExtendedAttributeSteps.theCharacterAtRowColumnShouldHaveHighlight(java.lang.Integer,java.lang.Integer,java.lang.String)
+  And the character at row 1 column 4 should have highlight "UNDERSCORE"  # com.rhlowery.term3270.ExtendedAttributeSteps.theCharacterAtRowColumnShouldHaveHighlight(java.lang.Integer,java.lang.Integer,java.lang.String)
+
+Scenario: Applying color via SA                                  # com/rhlowery/term3270/ExtendedAttributes.feature:26
+  Given a blank terminal buffer                                  # com.rhlowery.term3270.CommonSteps.aBlankTerminalBuffer()
+  When I parse the SBA sequence for row 1 column 10              # com.rhlowery.term3270.ParserSteps.iParseTheSbaSequenceForRowColumn(java.lang.Integer,java.lang.Integer)
+DEBUG: Modifying attr 1296928719 type 66 to value 241
+DEBUG: Attr color is now BLUE, highlight is NORMAL
+  And I parse an SA sequence for color "BLUE"                    # com.rhlowery.term3270.ExtendedAttributeSteps.iParseAnSaSequenceForColor(java.lang.String)
+  And I parse the text "SA"                                      # com.rhlowery.term3270.CommonSteps.iParseTheText(java.lang.String)
+  Then the character at row 1 column 10 should have color "BLUE" # com.rhlowery.term3270.ExtendedAttributeSteps.theCharacterAtRowColumnShouldHaveColor(java.lang.Integer,java.lang.Integer,java.lang.String)
+
+Scenario: Rejecting non-numeric input in numeric fields # com/rhlowery/term3270/FieldValidation.feature:3
+  Given a blank terminal buffer                         # com.rhlowery.term3270.CommonSteps.aBlankTerminalBuffer()
+  And a numeric field at row 1 column 1                 # com.rhlowery.term3270.FieldValidationSteps.aNumericFieldAtRowColumn(java.lang.Integer,java.lang.Integer)
+  When I type "A" at row 1 column 2                     # com.rhlowery.term3270.FieldValidationSteps.iTypeAtRowColumn(java.lang.String,java.lang.Integer,java.lang.Integer)
+DEBUG: ScreenBufferSteps created with TestContext: 279781579
+DEBUG: IntegrationSteps created with TestContext: 279781579
+  Then the character at row 1 column 2 should be " "    # com.rhlowery.term3270.ScreenBufferSteps.theCharacterAtRowColumnShouldBe(java.lang.Integer,java.lang.Integer,java.lang.String)
+
+Scenario: Accepting numeric input in numeric fields  # com/rhlowery/term3270/FieldValidation.feature:9
+  Given a blank terminal buffer                      # com.rhlowery.term3270.CommonSteps.aBlankTerminalBuffer()
+  And a numeric field at row 1 column 1              # com.rhlowery.term3270.FieldValidationSteps.aNumericFieldAtRowColumn(java.lang.Integer,java.lang.Integer)
+  When I type "1" at row 1 column 2                  # com.rhlowery.term3270.FieldValidationSteps.iTypeAtRowColumn(java.lang.String,java.lang.Integer,java.lang.Integer)
+DEBUG: ScreenBufferSteps created with TestContext: 36627152
+DEBUG: IntegrationSteps created with TestContext: 36627152
+  Then the character at row 1 column 2 should be "1" # com.rhlowery.term3270.ScreenBufferSteps.theCharacterAtRowColumnShouldBe(java.lang.Integer,java.lang.Integer,java.lang.String)
+
+Scenario: Auto-skipping when field is full    # com/rhlowery/term3270/FieldValidation.feature:15
+  Given a blank terminal buffer               # com.rhlowery.term3270.CommonSteps.aBlankTerminalBuffer()
+  And an unprotected field at row 1 column 1  # com.rhlowery.term3270.BulkOrderSteps.anUnprotectedFieldAtRowColumn(java.lang.Integer,java.lang.Integer)
+  And an unprotected field at row 1 column 5  # com.rhlowery.term3270.BulkOrderSteps.anUnprotectedFieldAtRowColumn(java.lang.Integer,java.lang.Integer)
+DEBUG: ScreenBufferSteps created with TestContext: 1404834600
+DEBUG: IntegrationSteps created with TestContext: 1404834600
+DEBUG: ScreenBufferSteps.iWriteAtRowColumn buffer identity: 454160179
+  When I write "123" at row 1 column 2        # com.rhlowery.term3270.ScreenBufferSteps.iWriteAtRowColumn(java.lang.String,java.lang.Integer,java.lang.Integer)
+  Then the cursor should be at row 1 column 5 # com.rhlowery.term3270.CursorSteps.theCursorShouldBeAtRowColumn(java.lang.Integer,java.lang.Integer)
+
+Scenario: Rendering buffer content to the screen   # com/rhlowery/term3270/Integration.feature:6
+DEBUG: IntegrationSteps created with TestContext: 653345773
+DEBUG: IntegrationSteps.aSessionWithAtRowColumn buffer identity: 454160179
+  Given a session with "WELCOME" at row 1 column 1 # com.rhlowery.term3270.IntegrationSteps.aSessionWithAtRowColumn(java.lang.String,java.lang.Integer,java.lang.Integer)
+DEBUG: IntegrationSteps.theUiShouldRenderAtRow buffer identity: 454160179
+DEBUG: Mismatch at row 1 col 1. Expected 'W' but was ' ' (int: 32)
+  Then the UI should render "WELCOME" at row 1     # com.rhlowery.term3270.IntegrationSteps.theUiShouldRenderAtRow(java.lang.String,java.lang.Integer)
+      org.opentest4j.AssertionFailedError: expected: <W> but was: < >
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:54)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:49)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1041)
+	at com.rhlowery.term3270.IntegrationSteps.theUiShouldRenderAtRow(IntegrationSteps.java:40)
+	at ✽.the UI should render "WELCOME" at row 1(classpath:com/rhlowery/term3270/Integration.feature:8)
+
+
+Scenario Outline: Mapping physical keys to AID actions # com/rhlowery/term3270/Keyboard.feature:13
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+  Given a focused terminal window                      # com.rhlowery.term3270.KeyboardSteps.aFocusedTerminalWindow()
+  When I physically press the "ENTER" key              # com.rhlowery.term3270.KeyboardSteps.iPhysicallyPressTheKey(java.lang.String)
+  Then the session should trigger a "ENTER" action     # com.rhlowery.term3270.KeyboardSteps.theSessionShouldTriggerAAction(java.lang.String)
+
+Scenario Outline: Mapping physical keys to AID actions # com/rhlowery/term3270/Keyboard.feature:14
+  Given a focused terminal window                      # com.rhlowery.term3270.KeyboardSteps.aFocusedTerminalWindow()
+  When I physically press the "F1" key                 # com.rhlowery.term3270.KeyboardSteps.iPhysicallyPressTheKey(java.lang.String)
+  Then the session should trigger a "PF1" action       # com.rhlowery.term3270.KeyboardSteps.theSessionShouldTriggerAAction(java.lang.String)
+
+Scenario Outline: Mapping physical keys to AID actions # com/rhlowery/term3270/Keyboard.feature:15
+  Given a focused terminal window                      # com.rhlowery.term3270.KeyboardSteps.aFocusedTerminalWindow()
+  When I physically press the "F12" key                # com.rhlowery.term3270.KeyboardSteps.iPhysicallyPressTheKey(java.lang.String)
+  Then the session should trigger a "PF12" action      # com.rhlowery.term3270.KeyboardSteps.theSessionShouldTriggerAAction(java.lang.String)
+
+Scenario Outline: Mapping physical keys to AID actions # com/rhlowery/term3270/Keyboard.feature:16
+  Given a focused terminal window                      # com.rhlowery.term3270.KeyboardSteps.aFocusedTerminalWindow()
+  When I physically press the "ESCAPE" key             # com.rhlowery.term3270.KeyboardSteps.iPhysicallyPressTheKey(java.lang.String)
+  Then the session should trigger a "CLEAR" action     # com.rhlowery.term3270.KeyboardSteps.theSessionShouldTriggerAAction(java.lang.String)
+
+Scenario: Successful connection and status update # com/rhlowery/term3270/Network.feature:6
+  Given a mock mainframe server                   # com.rhlowery.term3270.NetworkSteps.aMockMainframeServer()
+  When I initiate a connection to the mock server # com.rhlowery.term3270.NetworkSteps.iInitiateAConnectionToTheMockServer()
+  Then the session status should be "CONNECTED"   # com.rhlowery.term3270.CommonSteps.theSessionStatusShouldBe(java.lang.String)
+  And I should be able to disconnect              # com.rhlowery.term3270.NetworkSteps.iShouldBeAbleToDisconnect()
+
+Scenario: Parsing Set Buffer Address (SBA)          # com/rhlowery/term3270/Parser.feature:6
+  Given an empty screen                             # com.rhlowery.term3270.CommonSteps.anEmptyScreen()
+  When I parse the SBA sequence for row 5 column 10 # com.rhlowery.term3270.ParserSteps.iParseTheSbaSequenceForRowColumn(java.lang.Integer,java.lang.Integer)
+  Then the current buffer address should be 329     # com.rhlowery.term3270.ParserSteps.theCurrentBufferAddressShouldBe(java.lang.Integer)
+
+Scenario: Parsing Start Field (SF)                            # com/rhlowery/term3270/Parser.feature:11
+  Given an empty screen                                       # com.rhlowery.term3270.CommonSteps.anEmptyScreen()
+  When I parse a Start Field order with attribute "PROTECTED" # com.rhlowery.term3270.ParserSteps.iParseAStartFieldOrderWithAttribute(java.lang.String)
+  Then the cell at the current address should be protected    # com.rhlowery.term3270.ParserSteps.theCellAtTheCurrentAddressShouldBeProtected()
+
+Scenario: Displaying the initial screen              # com/rhlowery/term3270/Rendering.feature:6
+  Given a connected terminal session                 # com.rhlowery.term3270.RenderingSteps.aConnectedTerminalSession()
+  When the UI is initialized                         # com.rhlowery.term3270.RenderingSteps.theUiIsInitialized()
+  Then the UI should render a 24x80 character grid   # com.rhlowery.term3270.RenderingSteps.theUiShouldRenderA24x80CharacterGrid()
+  And the default background color should be "BLACK" # com.rhlowery.term3270.RenderingSteps.theDefaultBackgroundColorShouldBe(java.lang.String)
+
+Scenario: Updating character data in the buffer      # com/rhlowery/term3270/ScreenBuffer.feature:6
+  Given a blank terminal buffer                      # com.rhlowery.term3270.CommonSteps.aBlankTerminalBuffer()
+DEBUG: ScreenBufferSteps created with TestContext: 1874542689
+DEBUG: IntegrationSteps created with TestContext: 1874542689
+DEBUG: ScreenBufferSteps.iWriteAtRowColumn buffer identity: 454160179
+  When I write "HELLO" at row 1 column 1             # com.rhlowery.term3270.ScreenBufferSteps.iWriteAtRowColumn(java.lang.String,java.lang.Integer,java.lang.Integer)
+  Then the character at row 1 column 1 should be 'H' # com.rhlowery.term3270.ScreenBufferSteps.theCharacterAtRowColumnShouldBe(java.lang.Integer,java.lang.Integer,java.lang.String)
+  And the character at row 1 column 5 should be 'O'  # com.rhlowery.term3270.ScreenBufferSteps.theCharacterAtRowColumnShouldBe(java.lang.Integer,java.lang.Integer,java.lang.String)
+
+Scenario: Clearing the buffer        # com/rhlowery/term3270/ScreenBuffer.feature:12
+DEBUG: ScreenBufferSteps created with TestContext: 1674938191
+DEBUG: IntegrationSteps created with TestContext: 1674938191
+  Given a buffer with data           # com.rhlowery.term3270.ScreenBufferSteps.aBufferWithData()
+  When I clear the screen            # com.rhlowery.term3270.ScreenBufferSteps.iClearTheScreen()
+  Then all positions should be blank # com.rhlowery.term3270.ScreenBufferSteps.allPositionsShouldBeBlank()
+[ERROR] Tests run: 30, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.838 s <<< FAILURE! -- in com.rhlowery.term3270.RunCucumberTest
+[ERROR] UI and Buffer Integration.Rendering buffer content to the screen -- Time elapsed: 0.006 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <W> but was: < >
+	at com.rhlowery.term3270.IntegrationSteps.theUiShouldRenderAtRow(IntegrationSteps.java:40)
+	at ✽.the UI should render "WELCOME" at row 1(classpath:com/rhlowery/term3270/Integration.feature:8)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   expected: <W> but was: < >
+[INFO] 
+[ERROR] Tests run: 30, Failures: 1, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.412 s
+[INFO] Finished at: 2026-04-29T17:20:21-04:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.2.2:test (default-test) on project term3270-app: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /Users/loweryr/git/github/rhlowery/term3270/term3270-app/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

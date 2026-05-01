@@ -1,0 +1,33 @@
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.nextSnapshot
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/.maven-wrapper.properties
+
+# IDEs
+.idea/
+*.iml
+*.iws
+.vscode/
+.settings/
+.classpath
+.project
+.nb-gradle/
+nb-configuration.xml
+
+# Allure
+.allure/
+allure-results/
+allure-report/
+
+# OS/Temp
+.DS_Store
+Thumbs.db
+*.log
+tmp/
