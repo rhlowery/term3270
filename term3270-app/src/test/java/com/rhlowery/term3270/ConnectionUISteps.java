@@ -23,6 +23,13 @@ public class ConnectionUISteps {
 
   private TerminalFrame frame;
   private final TestContext context;
+  private String host = "localhost";
+  private int port = 3270;
+  private String terminalType = "IBM-3279-2-E";
+  private boolean secure = false;
+  private boolean verifyHostname = false;
+  private String codepage = "Cp037";
+  private String emulationType = "3270";
 
   /**
    * Constructs the step definitions with the shared test context.
@@ -31,6 +38,35 @@ public class ConnectionUISteps {
    */
   public ConnectionUISteps(TestContext context) {
     this.context = context;
+  }
+
+  /**
+   * Resets the step definition state before each scenario.
+   */
+  @io.cucumber.java.Before(order = 100)
+  public void setUp() {
+    host = "localhost";
+    port = 3270;
+    terminalType = "IBM-3279-2-E";
+    secure = false;
+    verifyHostname = false;
+    codepage = "Cp037";
+    emulationType = "3270";
+  }
+
+  /**
+   * Cleans up UI components after each scenario.
+   */
+  @io.cucumber.java.After
+  public void tearDown() {
+    if (frame != null) {
+      frame.setVisible(false);
+      frame.dispose();
+    }
+    for (java.awt.Window window : java.awt.Window.getWindows()) {
+      window.setVisible(false);
+      window.dispose();
+    }
   }
 
   /**
@@ -91,7 +127,7 @@ public class ConnectionUISteps {
     assertNotNull(item, "Menu item " + itemName + " not found");
 
     for (ActionListener al : item.getActionListeners()) {
-      al.actionPerformed(null);
+      javax.swing.SwingUtilities.invokeLater(() -> al.actionPerformed(null));
     }
   }
 
@@ -110,7 +146,19 @@ public class ConnectionUISteps {
    */
   @Given("the connection dialog is open")
   public void theConnectionDialogIsOpen() {
-    // Simulated state
+    if (GraphicsEnvironment.isHeadless()) {
+      return;
+    }
+
+    // Check if already open
+    for (java.awt.Window window : java.awt.Window.getWindows()) {
+      if (window instanceof ConnectionDialog && window.isVisible()) {
+        return;
+      }
+    }
+
+    // Otherwise trigger the menu action to open it
+    iSelectFromTheMenu("Session", "Connect...");
   }
 
   /**
@@ -138,12 +186,15 @@ public class ConnectionUISteps {
    */
   @When("I enter {string} as host and {int} as port")
   public void iEnterAsHostAndAsPort(String host, Integer port) {
-    // In a real test we would find the dialog and set text.
-    // For this BDD exercise we will simulate the session.connect call 
-    // that the dialog would trigger.
-    int targetPort = (port == 3270 && context.getMockPort() != 0) ? context.getMockPort() : port;
-    ITerminalSession session = context.getSession();
-    session.connect(ConnectionConfig.defaultConnection(host, targetPort, "IBM-3270-2"));
+    this.host = host;
+    this.port = port;
+    if (!GraphicsEnvironment.isHeadless()) {
+      runOnEDT(() -> {
+        ConnectionDialog dialog = waitForDialog();
+        findAndSetField(dialog, "Hostname:", host);
+        findAndSetField(dialog, "Port:", String.valueOf(port));
+      });
+    }
   }
 
   /**
@@ -153,7 +204,13 @@ public class ConnectionUISteps {
    */
   @When("I toggle secure connection to {word}")
   public void iToggleSecureConnectionTo(String secure) {
-    // Simulated state for secure connection
+    this.secure = "true".equalsIgnoreCase(secure) || "on".equalsIgnoreCase(secure);
+    if (!GraphicsEnvironment.isHeadless()) {
+      runOnEDT(() -> {
+        ConnectionDialog dialog = waitForDialog();
+        findAndSetField(dialog, "Secure (TN3270S):", secure);
+      });
+    }
   }
 
   /**
@@ -163,7 +220,13 @@ public class ConnectionUISteps {
    */
   @When("I toggle verify hostname to {word}")
   public void iToggleVerifyHostnameTo(String verify) {
-    // Simulated state for verify hostname
+    this.verifyHostname = "true".equalsIgnoreCase(verify) || "on".equalsIgnoreCase(verify);
+    if (!GraphicsEnvironment.isHeadless()) {
+      runOnEDT(() -> {
+        ConnectionDialog dialog = waitForDialog();
+        findAndSetField(dialog, "Verify Hostname:", verify);
+      });
+    }
   }
 
   /**
@@ -173,7 +236,94 @@ public class ConnectionUISteps {
    */
   @When("I click {string}")
   public void iClick(String buttonText) {
-    // Logic triggered by dialog confirmation
+    if (GraphicsEnvironment.isHeadless()) {
+      if ("Connect".equals(buttonText)) {
+        int targetPort = (port == 3270 && context.getMockPort() != 0) ? context.getMockPort() : port;
+        context.getSession().connect(new ConnectionConfig(
+            host, targetPort, terminalType, secure, verifyHostname, codepage, emulationType));
+      }
+      return;
+    }
+
+    // Non-headless: find the dialog and the button
+    runOnEDT(() -> {
+      ConnectionDialog dialog = waitForDialog();
+      findAndClickButton(dialog, buttonText);
+    });
+  }
+
+  private void runOnEDT(Runnable runnable) {
+    if (javax.swing.SwingUtilities.isEventDispatchThread()) {
+      runnable.run();
+    } else {
+      try {
+        javax.swing.SwingUtilities.invokeAndWait(runnable);
+      } catch (Exception e) {
+        throw new RuntimeException(e);
+      }
+    }
+  }
+
+  private ConnectionDialog waitForDialog() {
+    long start = System.currentTimeMillis();
+    while (System.currentTimeMillis() - start < 5000) {
+      for (java.awt.Window window : java.awt.Window.getWindows()) {
+        if (window instanceof ConnectionDialog && window.isVisible()) {
+          return (ConnectionDialog) window;
+        }
+      }
+      try {
+        Thread.sleep(100);
+      } catch (InterruptedException ignored) {}
+    }
+    throw new RuntimeException("Connection dialog not found or not visible");
+  }
+
+  private void findAndSetField(java.awt.Container container, String labelText, String value) {
+    java.awt.Component[] comps = container.getComponents();
+    for (int i = 0; i < comps.length; i++) {
+      if (comps[i] instanceof javax.swing.JLabel && labelText.equals(((javax.swing.JLabel) comps[i]).getText())) {
+        if (i + 1 < comps.length) {
+          java.awt.Component field = comps[i + 1];
+          if (field instanceof javax.swing.JTextField) {
+            ((javax.swing.JTextField) field).setText(value);
+          } else if (field instanceof javax.swing.JComboBox) {
+            javax.swing.JComboBox combo = (javax.swing.JComboBox) field;
+            boolean found = false;
+            for (int j = 0; j < combo.getItemCount(); j++) {
+              if (value.equals(combo.getItemAt(j).toString())) {
+                combo.setSelectedIndex(j);
+                found = true;
+                break;
+              }
+            }
+            if (!found) {
+                System.err.println("Could not find item " + value + " in combo box for " + labelText);
+            }
+          } else if (field instanceof javax.swing.JCheckBox) {
+            ((javax.swing.JCheckBox) field).setSelected("true".equalsIgnoreCase(value) || "on".equalsIgnoreCase(value));
+            // Manually trigger listeners as setSelected doesn't always do it
+            for (java.awt.event.ActionListener al : ((javax.swing.JCheckBox) field).getActionListeners()) {
+                al.actionPerformed(new java.awt.event.ActionEvent(field, java.awt.event.ActionEvent.ACTION_PERFORMED, null));
+            }
+          }
+        }
+        return;
+      } else if (comps[i] instanceof java.awt.Container) {
+        findAndSetField((java.awt.Container) comps[i], labelText, value);
+      }
+    }
+  }
+
+  private void findAndClickButton(java.awt.Container container, String text) {
+    for (java.awt.Component comp : container.getComponents()) {
+      if (comp instanceof javax.swing.JButton && text.equals(((javax.swing.JButton) comp).getText())) {
+        ((javax.swing.JButton) comp).doClick();
+        return;
+      } else if (comp instanceof java.awt.Container) {
+        findAndClickButton((java.awt.Container) comp, text);
+      }
+    }
   }
 
   /**
@@ -183,6 +333,19 @@ public class ConnectionUISteps {
    */
   @Then("the session status should eventually be {string}")
   public void theSessionStatusShouldEventuallyBe(String status) {
+    long start = System.currentTimeMillis();
+    while (System.currentTimeMillis() - start < 10000) {
+      String current = context.getSession().getStatus();
+      if (status.equals(current)) {
+        return;
+      }
+      if (current.startsWith("CONNECTION_FAILED") && !"CONNECTED".equals(status)) {
+          return;
+      }
+      try {
+        Thread.sleep(200);
+      } catch (InterruptedException ignored) {}
+    }
     assertEquals(status, context.getSession().getStatus());
   }
 
@@ -201,7 +364,13 @@ public class ConnectionUISteps {
    */
   @When("I select {string} as emulation type")
   public void iSelectAsEmulationType(String type) {
-    // Simulated state
+    this.emulationType = type;
+    if (!GraphicsEnvironment.isHeadless()) {
+      runOnEDT(() -> {
+        ConnectionDialog dialog = waitForDialog();
+        findAndSetField(dialog, "Emulation Type:", type);
+      });
+    }
   }
 
   /**
@@ -222,12 +391,17 @@ public class ConnectionUISteps {
    */
   @When("I select {string} as terminal size")
   public void iSelectAsTerminalSize(String size) {
-    String type = "IBM-3278-2";
-    if ("80x32".equals(size)) type = "IBM-3278-3";
-    else if ("80x43".equals(size)) type = "IBM-3278-4";
-    else if ("132x27".equals(size)) type = "IBM-3278-5";
+    if ("80x24".equals(size)) this.terminalType = "IBM-3278-2";
+    else if ("80x32".equals(size)) this.terminalType = "IBM-3278-3";
+    else if ("80x43".equals(size)) this.terminalType = "IBM-3278-4";
+    else if ("132x27".equals(size)) this.terminalType = "IBM-3278-5";
     
-    context.getSession().connect(ConnectionConfig.defaultConnection("localhost", 3270, type));
+    if (!GraphicsEnvironment.isHeadless()) {
+      runOnEDT(() -> {
+        ConnectionDialog dialog = waitForDialog();
+        findAndSetField(dialog, "Terminal Size:", size);
+      });
+    }
   }
 
   /**
