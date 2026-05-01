@@ -244,6 +244,15 @@ public class DataStreamParser implements IDataStreamParser {
         || val == (CMD_WSF_SNA & 0xFF);
   }
 
+  private boolean isRead(int val) {
+    return val == (CMD_READ_BUFFER & 0xFF)
+        || val == (CMD_READ_BUFFER_SNA & 0xFF)
+        || val == (CMD_READ_MODIFIED & 0xFF)
+        || val == (CMD_READ_MODIFIED_SNA & 0xFF)
+        || val == (CMD_READ_MODIFIED_ALL & 0xFF)
+        || val == (CMD_READ_MODIFIED_ALL_SNA & 0xFF);
+  }
+
   /**
    * Processes an initial 3270 command byte and transitions
    * the state machine.
@@ -252,6 +261,9 @@ public class DataStreamParser implements IDataStreamParser {
    */
   private void handleCommand(byte b) {
     int val = b & 0xFF;
+    if (val == 0x00) {
+      return; // Ignore NULL/padding between commands
+    }
     logger.debug("CMD: 0x{}", Integer.toHexString(val));
 
     if (isWrite(val) || isEraseWrite(val)) {
@@ -263,12 +275,42 @@ public class DataStreamParser implements IDataStreamParser {
       buffer.eraseInput();
       buffer.setKeyboardLocked(false);
       state = ParserState.COMMAND;
+    } else if (isRead(val)) {
+      handleRead(val);
+      state = ParserState.COMMAND;
     } else if (isWSF(val)) {
       state = ParserState.WSF_LEN_1;
     } else {
       logger.warn(
           "Unknown 3270 command: 0x{}",
           Integer.toHexString(val));
+    }
+  }
+
+  private void handleRead(int cmd) {
+    logger.info("Host requested READ: 0x{}", Integer.toHexString(cmd));
+    buffer.setKeyboardLocked(false);
+    
+    if (replyCallback == null) return;
+
+    ByteArrayOutputStream out = new ByteArrayOutputStream();
+    // Default response for Read Modified: 
+    // AID (ENTER) + Cursor Address + Modified Data
+    try {
+      out.write(AIDKey.ENTER.getCode());
+      byte[] cursorAddr = AddressConverter.fromAddress(buffer.getCursorAddress());
+      out.write(cursorAddr[0]);
+      out.write(cursorAddr[1]);
+      
+      if (cmd == (CMD_READ_BUFFER & 0xFF) || cmd == (CMD_READ_BUFFER_SNA & 0xFF)) {
+        // For Read Buffer, we should send everything. For now, we'll send empty data.
+      } else {
+        out.write(buffer.readModified());
+      }
+      
+      replyCallback.accept(out.toByteArray());
+    } catch (IOException e) {
+      logger.error("Failed to generate read response", e);
     }
   }
 

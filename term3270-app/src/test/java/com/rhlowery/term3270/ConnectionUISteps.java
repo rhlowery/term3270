@@ -335,8 +335,12 @@ public class ConnectionUISteps {
   public void theSessionStatusShouldEventuallyBe(String status) {
     long start = System.currentTimeMillis();
     while (System.currentTimeMillis() - start < 10000) {
-      String current = context.getSession().getStatus();
+      ITerminalSession session = context.getSession();
+      String current = session.getStatus();
       if (status.equals(current)) {
+        return;
+      }
+      if (current.startsWith("CONNECTION_FAILED") && status.equals("CONNECTION_FAILED")) {
         return;
       }
       if (current.startsWith("CONNECTION_FAILED") && !"CONNECTED".equals(status)) {

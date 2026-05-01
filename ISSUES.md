@@ -54,13 +54,13 @@
 | 51 | Implement IBM 5250 Protocol Support         | Closed | issue-51-5250   |
 | 52 | Enable Diagram Rendering in Javadoc         | Closed | issue-52-diag   |
 | 53 | Resolve Build Warnings and Refactor Packages| Closed | issue-53-warn   |
-| 54 | Implement Pluggable Protocol Handlers       | Open   | issue-54-proto  |
-| 55 | Implement Pluggable File Transfer Providers | Open   | issue-55-file   |
-| 56 | Implement Pluggable Printing Engines        | Open   | issue-56-print  |
-| 57 | Implement Pluggable Keyboard Layouts        | Open   | issue-57-kbd    |
-| 58 | Implement Pluggable Macro Storage           | Open   | issue-58-macro  |
+| 54 | Implement Pluggable Protocol Handlers       | Closed | issue-54-proto  |
+| 55 | Implement Pluggable File Transfer Providers | Closed | issue-55-file   |
+| 56 | Implement Pluggable Printing Engines        | Closed | issue-56-print  |
+| 57 | Implement Pluggable Keyboard Layouts        | Closed | issue-57-kbd    |
 | 58 | Implement Pluggable Macro Storage           | Closed | issue-58-macro  |
-| 59 | Implement Connect Button Click in Tests     | Open   | issue-59-test-connect |
+| 58 | Implement Pluggable Macro Storage           | Closed | issue-58-macro  |
+| 59 | Implement Connect Button Click in Tests     | Closed | issue-59-test-connect |
 | 60 | Swap File and Session Menu Order            | Closed | issue-60-menu-order   |
 
 ## Issue 25: Implement Outbound IAC Escaping and EOR Framing

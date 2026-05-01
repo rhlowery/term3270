@@ -133,9 +133,13 @@ public class TelnetClient {
   public void connect(ConnectionConfig config) throws IOException {
     this.terminalType = config.terminalType();
     
+    socket = new Socket();
+    socket.connect(new java.net.InetSocketAddress(config.host(), config.port()), 5000);
+    socket.setSoTimeout(5000);
+
     if (config.secure()) {
       SSLSocketFactory factory = (SSLSocketFactory) SSLSocketFactory.getDefault();
-      SSLSocket sslSocket = (SSLSocket) factory.createSocket(config.host(), config.port());
+      SSLSocket sslSocket = (SSLSocket) factory.createSocket(socket, config.host(), config.port(), true);
       if (config.verifyHostname()) {
         SSLParameters sslParams = new SSLParameters();
         sslParams.setEndpointIdentificationAlgorithm("HTTPS");
@@ -143,11 +147,10 @@ public class TelnetClient {
       }
       sslSocket.startHandshake();
       this.socket = sslSocket;
-    } else {
-      this.socket = new Socket(config.host(), config.port());
     }
     
     out = socket.getOutputStream();
+    socket.setSoTimeout(0); // Reset for steady-state readLoop
     running = true;
 
     new Thread(this::readLoop, "TelnetReader").start();

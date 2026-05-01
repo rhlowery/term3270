@@ -24,7 +24,7 @@ public class DefaultTerminalSession implements ITerminalSession {
   /**
    * The current connection status of the session.
    */
-  private String status = "DISCONNECTED";
+  private volatile String status = "DISCONNECTED";
 
   /**
    * Flag indicating if the terminal screen has been initialized.
@@ -130,6 +130,8 @@ public class DefaultTerminalSession implements ITerminalSession {
       configureParser();
       client.setParser(parser);
 
+      
+      
       EbcdicConverter conv =
           new EbcdicConverter(config.codepage());
       buffer.setConverter(conv);

@@ -46,6 +46,21 @@ public final class ProtocolConstants {
   public static final byte CMD_WSF = (byte) 0xF3;
   /** Write Structured Field – SNA form. */
   public static final byte CMD_WSF_SNA = (byte) 0x11;
+ 
+  /** Read Buffer – CCW form. */
+  public static final byte CMD_READ_BUFFER = (byte) 0xF2;
+  /** Read Buffer – SNA form. */
+  public static final byte CMD_READ_BUFFER_SNA = (byte) 0x02;
+ 
+  /** Read Modified – CCW form. */
+  public static final byte CMD_READ_MODIFIED = (byte) 0xF6;
+  /** Read Modified – SNA form. */
+  public static final byte CMD_READ_MODIFIED_SNA = (byte) 0x06;
+ 
+  /** Read Modified All – CCW form. */
+  public static final byte CMD_READ_MODIFIED_ALL = (byte) 0x6E;
+  /** Read Modified All – SNA form. */
+  public static final byte CMD_READ_MODIFIED_ALL_SNA = (byte) 0x0E;
 
   // ── 3270 Orders ───────────────────────────────────────
 

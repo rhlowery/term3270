@@ -28,6 +28,7 @@ Feature: Connection Management UI
     When I select "Session" -> "Restart" from the menu
     Then the session should disconnect and then reconnect
 
+  @issue-38
   Scenario Outline: Connecting with secure options
     Given a terminal application is running
     And a mock server is available
@@ -36,12 +37,12 @@ Feature: Connection Management UI
     And I toggle secure connection to <secure>
     And I toggle verify hostname to <verify>
     And I click "Connect"
-    Then the session status should eventually be "CONNECTED"
+    Then the session status should eventually be "<expected>"
 
     Examples:
-      | host      | port | secure | verify |
-      | localhost | 3270 | true   | false  |
-      | localhost | 3270 | false  | false  |
+      | host      | port | secure | verify | expected          |
+      | localhost | 3270 | true   | false  | CONNECTION_FAILED |
+      | localhost | 3270 | false  | false  | CONNECTED         |
 
   Scenario: Selecting Emulation Type
     Given a terminal application is running

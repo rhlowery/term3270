@@ -161,9 +161,9 @@ public class TerminalFrame extends JFrame {
       lastCodepage = dialog.getCodepage();
       lastEmulationType = dialog.getEmulationType();
 
-      logger.info("Connecting to {}:{} using type {} and codepage {}", 
-          lastHost, lastPort, lastType, lastCodepage);
-
+      logger.info("Connection dialog confirmed. Host: {}, Port: {}, Secure: {}", 
+          lastHost, lastPort, lastSecure);
+      
       ITerminalSession session = Lookup.getDefault()
           .lookup(ITerminalSession.class);
       if (session != null) {

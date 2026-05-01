@@ -58,6 +58,7 @@ public class TerminalPanel extends JPanel {
     setBackground(Color.BLACK);
     setFont(new Font(Font.MONOSPACED, Font.PLAIN, 16));
     setFocusable(true);
+    setFocusTraversalKeysEnabled(false);
     addKeyListener(new TerminalKeyListener());
 
     updateMetrics();
