@@ -22,7 +22,7 @@ jobs:
       - name: Start Hercules TK5
         run: |
           # Start TK5 in detached mode
-          docker run -d --name tk5-emulator -p 3270:3270 -p 8038:8038 praths/mvs-tk5
+          docker run -d --name tk5-emulator -p 3270:3270 -p 8038:8038 joergschultzelutter/tk5-hercules
 
           # Wait for MVS to IPL (usually takes ~60 seconds)
           echo "Waiting for Hercules TK5 to start..."
