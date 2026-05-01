@@ -61,6 +61,7 @@
 | 58 | Implement Pluggable Macro Storage           | Open   | issue-58-macro  |
 | 58 | Implement Pluggable Macro Storage           | Closed | issue-58-macro  |
 | 59 | Implement Connect Button Click in Tests     | Open   | issue-59-test-connect |
+| 60 | Swap File and Session Menu Order            | Closed | issue-60-menu-order   |
 
 ## Issue 25: Implement Outbound IAC Escaping and EOR Framing
 The current implementation of `sendData` sends raw bytes to the host. Any `0xFF` bytes in the 3270 data stream (common in buffer addresses) are not escaped as `0xFF 0xFF`, causing Telnet protocol errors. Additionally, outbound messages lack the mandatory `IAC EOR` (FF EF) termination, preventing the host from processing user input.
@@ -257,3 +258,6 @@ Enable pluggable macro storage backends. Currently, macros are stored as JSON fi
 
 ## Issue 59: Implement Connect Button Click in Tests
 The current BDD tests for the Connection UI use the step `And I click "Connect"`, but the corresponding step definition in `ConnectionUISteps.java` is empty. This prevents the tests from correctly simulating the user's confirmation in the `ConnectionDialog`, which is required to initiate the terminal session. Implementing this step will ensure that the integration tests accurately reflect the application's connection flow.
+
+## Issue 60: Swap File and Session Menu Order
+Standard UI conventions usually place the "File" menu as the first item in the menu bar. Currently, "Session" appears first. This task involves reordering the menu bar in `TerminalFrame` so that "File" is the first menu, followed by "Session" and "Macros".

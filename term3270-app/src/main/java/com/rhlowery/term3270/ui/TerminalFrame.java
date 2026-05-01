@@ -79,21 +79,6 @@ public class TerminalFrame extends JFrame {
 
   private JMenuBar createMenuBar() {
     JMenuBar menuBar = new JMenuBar();
-    JMenu sessionMenu = new JMenu("Session");
-
-    JMenuItem connectItem = new JMenuItem("Connect...");
-    connectItem.addActionListener(e -> onConnect());
-    sessionMenu.add(connectItem);
-
-    JMenuItem disconnectItem = new JMenuItem("Disconnect");
-    disconnectItem.addActionListener(e -> onDisconnect());
-    sessionMenu.add(disconnectItem);
-
-    JMenuItem restartItem = new JMenuItem("Restart");
-    restartItem.addActionListener(e -> onRestart());
-    sessionMenu.add(restartItem);
-
-    menuBar.add(sessionMenu);
     
     JMenu fileMenu = new JMenu("File");
     
@@ -124,6 +109,22 @@ public class TerminalFrame extends JFrame {
     fileMenu.add(exitItem);
     
     menuBar.add(fileMenu);
+
+    JMenu sessionMenu = new JMenu("Session");
+
+    JMenuItem connectItem = new JMenuItem("Connect...");
+    connectItem.addActionListener(e -> onConnect());
+    sessionMenu.add(connectItem);
+
+    JMenuItem disconnectItem = new JMenuItem("Disconnect");
+    disconnectItem.addActionListener(e -> onDisconnect());
+    sessionMenu.add(disconnectItem);
+
+    JMenuItem restartItem = new JMenuItem("Restart");
+    restartItem.addActionListener(e -> onRestart());
+    sessionMenu.add(restartItem);
+
+    menuBar.add(sessionMenu);
     
     JMenu macroMenu = new JMenu("Macros");
     

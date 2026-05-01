@@ -415,4 +415,37 @@ public class ConnectionUISteps {
     assertEquals(cols, context.getSession().getScreenBuffer().getCols());
     assertEquals(rows, context.getSession().getScreenBuffer().getRows());
   }
+
+  /**
+   * Verifies the first menu in the menu bar.
+   *
+   * @param expected The expected menu name.
+   */
+  @Then("the first menu should be {string}")
+  public void theFirstMenuShouldBe(String expected) {
+    if (GraphicsEnvironment.isHeadless()) return;
+    assertEquals(expected, frame.getJMenuBar().getMenu(0).getText());
+  }
+
+  /**
+   * Verifies the second menu in the menu bar.
+   *
+   * @param expected The expected menu name.
+   */
+  @Then("the second menu should be {string}")
+  public void theSecondMenuShouldBe(String expected) {
+    if (GraphicsEnvironment.isHeadless()) return;
+    assertEquals(expected, frame.getJMenuBar().getMenu(1).getText());
+  }
+
+  /**
+   * Verifies the third menu in the menu bar.
+   *
+   * @param expected The expected menu name.
+   */
+  @Then("the third menu should be {string}")
+  public void theThirdMenuShouldBe(String expected) {
+    if (GraphicsEnvironment.isHeadless()) return;
+    assertEquals(expected, frame.getJMenuBar().getMenu(2).getText());
+  }
 }
